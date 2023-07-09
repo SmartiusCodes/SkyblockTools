@@ -81,7 +81,7 @@ async function search() {
 
     for (i = 0; i < output.length; i++) {
         let fortmatedNumber = new Intl.NumberFormat().format(output[i].starting_bid);
-        result += i + ": Item: " + output[i].item_name + ", Cost: " + fortmatedNumber + "<br>";
+        result += i+1 + ": Item: " + output[i].item_name + ", Cost: " + fortmatedNumber + "<br>";
     }
 
     document.getElementById("Result").innerHTML = result;
