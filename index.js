@@ -29,7 +29,7 @@ async function search() {
                 lore.push(loreAmount[i]);
             }
         } else {
-            lore = [document.getElementById("Lore").value];
+            lore.push(document.getElementById("Lore").value);
         }
     } else {
         lore = [];
