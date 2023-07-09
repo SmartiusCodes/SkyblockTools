@@ -80,7 +80,8 @@ async function search() {
     console.log(output);
 
     for (i = 0; i < output.length; i++) {
-        result += "Item: " + output[i].item_name + ", Cost: " + output[i].starting_bid + "<br>";
+        let fortmatedNumber = new Intl.NumberFormat().format(output[i].starting_bid);
+        result += "Item: " + output[i].item_name + ", Cost: " + fortmatedNumber + "<br>";
     }
 
     document.getElementById("Result").innerHTML = result;
