@@ -75,8 +75,6 @@ async function search() {
         }
     }
 
-    console.log(output);
-
     var amountOfAuctions;
 
     for (i = 0; i < output.length; i++) {
