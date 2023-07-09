@@ -1,15 +1,16 @@
-var result;
-
 async function search() {
 
-    result = "";
+    var existingLi = document.getElementsByTagName("li");
+    while(existingLi.length > 0){
+        existingLi[0].parentNode.removeChild(existingLi[0]);
+    }
+
+    document.getElementById("searchBtn").disabled = true;
 
     var BIN;
 
     if (document.getElementById("BIN").value == "true") { BIN = "input[i].bin == true" };
     if (document.getElementById("BIN").value == "false") { BIN = "input[i].bin == false" };
-
-    console.log(document.getElementById("BIN").value);
 
     var itemName;
 
@@ -35,8 +36,6 @@ async function search() {
         lore = [];
     }
 
-    console.log(lore);
-
     var allAuctionPages = [];
     var i = 0;
 
@@ -51,7 +50,6 @@ async function search() {
         allAuctionPages.push(await response.json());
         i++;
         document.getElementById("pagesIn").innerHTML = "Pages Gone Through: " + i;
-        console.log(i);
     }
     var output = [];
 
@@ -79,12 +77,48 @@ async function search() {
 
     console.log(output);
 
+    var amountOfAuctions;
+
     for (i = 0; i < output.length; i++) {
+
+        var tempResult = {};
+
+        var uuidData = [];
+        var username;
+
+        var response = await fetch("https://api.ashcon.app/mojang/v2/user/" + output[i].auctioneer);
+        uuidData.push(await response.json());
+        username = uuidData[0].username
+
         let fortmatedNumber = new Intl.NumberFormat().format(output[i].starting_bid);
-        result += i+1 + ": Item: " + output[i].item_name + ", Cost: " + fortmatedNumber + "<br>";
+
+        tempResult.item = output[i].item_name;
+        tempResult.cost = fortmatedNumber;
+        tempResult.auctioneer = username;
+
+        var li = document.createElement("li");
+
+        var nameDisplay = document.createTextNode("Item: " + output[i].item_name);
+        var costDisplay = document.createTextNode("Cost: "  + fortmatedNumber);
+        var auctioneerDisplay = document.createTextNode("Auctioneer: " + username);
+
+        li.appendChild(nameDisplay);
+        li.appendChild(document.createElement('br'));
+        li.appendChild(costDisplay);
+        li.appendChild(document.createElement('br'));
+        li.appendChild(auctioneerDisplay);
+
+        document.getElementById("displayAuctions").appendChild(li);
+
+        amountOfAuctions = i;
     }
 
-    document.getElementById("Result").innerHTML = result;
+    amountOfAuctions++;
+
+    document.getElementById("amountOfAuctions").innerHTML = "Amount Of Auctions: " + amountOfAuctions;
+
+    document.getElementById("searchBtn").disabled = false;
+
 }
 
 function goThroughList(inserted, output, input, i) {

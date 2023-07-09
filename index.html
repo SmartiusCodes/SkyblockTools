@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SB AH Viewer</title>
 </head>
@@ -30,13 +31,17 @@
     <input placeholder="Name" id="Name">
     <input placeholder="Lore" id="Lore">
 
-    <button onclick="search()">Search</button>
+    <button id="searchBtn" onclick="search()">Search</button>
     
     <p id="pagesIn">Pages Gone Through: 0</p>
 
     <br>
 
-    <p id="Result"></p>
+    <p id="amountOfAuctions">Amount Of Auctions: 0</p>
+
+    <ul id="displayAuctions">
+
+    </ul>
 </body>
 <script src="index.js"></script>
 </html>
