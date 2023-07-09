@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testing</title>
+    <title>SB AH Viewer</title>
 </head>
 <body>
+
+    BIN:
+    <select id="BIN">
+        <option value="true" selected>Yes</option>
+        <option value="false">No</option>
+    </select>
+
+    Rarity
+    <select id="Rarity">
+        <option value="Any" selected>Any</option>
+        <option value="COMMON">Common</option>
+        <option value="UNCOMMON">Uncommon</option>
+        <option value="RARE">Rare</option>
+        <option value="EPIC">Epic</option>
+        <option value="LEGENDARY">Legendary</option>
+        <option value="MYTHIC">Mythic</option>
+        <option value="DIVINE">Divine</option>
+        <option value="SPECIAL">Special</option>
+        <option value="VERY SPECIAL">Very Special</option>
+    </select>
+
+    <input placeholder="Name" id="Name">
+    <input placeholder="Lore" id="Lore">
+
+    <button onclick="search()">Search</button>
     
+    <p id="pagesIn">Pages Gone Through: 0</p>
+
+    <br>
+
+    <p id="Result"></p>
 </body>
+<script src="index.js"></script>
 </html>
