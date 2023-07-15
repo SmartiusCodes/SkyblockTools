@@ -1,9 +1,9 @@
-//New search somehow shows no auctions and display NaN auctions!
-
 setInterval(getData, 600000);
 
 var allAuctionPages = [];
 var canSearch;
+
+var cancelSearch = false;
 
 async function getData() {
 
@@ -121,6 +121,8 @@ async function search() {
 
             var li = document.createElement("li");
 
+            li.style = "white-space: pre;"
+
             var nameDisplay = document.createTextNode("Item: " + output[i].item_name);
             var costDisplay = document.createTextNode("Cost: " + fortmatedNumber);
             var auctioneerDisplay = document.createTextNode("Auctioneer: " + username);
@@ -130,6 +132,12 @@ async function search() {
             li.appendChild(costDisplay);
             li.appendChild(document.createElement('br'));
             li.appendChild(auctioneerDisplay);
+            li.appendChild(document.createElement('br'));
+            li.appendChild(document.createElement('br'));
+
+            var lore = output[i].item_lore;
+
+            li.appendChild(document.createTextNode(removeSymbols(lore)));
 
             document.getElementById("displayAuctions").appendChild(li);
 
@@ -154,4 +162,31 @@ function goThroughList(inserted, output, input, i) {
     if (!inserted) {
         output.push(input[i]);
     }
+}
+
+function removeSymbols(lore) {
+    lore = lore.replaceAll("§0", "");
+    lore = lore.replaceAll("§1", "");
+    lore = lore.replaceAll("§2", "");
+    lore = lore.replaceAll("§3", "");
+    lore = lore.replaceAll("§4", "");
+    lore = lore.replaceAll("§5", "");
+    lore = lore.replaceAll("§6", "");
+    lore = lore.replaceAll("§7", "");
+    lore = lore.replaceAll("§8", "");
+    lore = lore.replaceAll("§9", "");
+    lore = lore.replaceAll("§a", "");
+    lore = lore.replaceAll("§b", "");
+    lore = lore.replaceAll("§c", "");
+    lore = lore.replaceAll("§d", "");
+    lore = lore.replaceAll("§e", "");
+    lore = lore.replaceAll("§f", "");
+    lore = lore.replaceAll("§k", "");
+    lore = lore.replaceAll("§l", "");
+    lore = lore.replaceAll("§m", "");
+    lore = lore.replaceAll("§n", "");
+    lore = lore.replaceAll("§o", "");
+    lore = lore.replaceAll("§r", "");
+
+    return lore;
 }
