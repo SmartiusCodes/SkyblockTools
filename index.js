@@ -38,12 +38,12 @@ async function search() {
 
     if (canSearch) {
 
+        document.getElementById("searchBtn").disabled = true;
+
         var existingLi = document.getElementsByTagName("li");
         while (existingLi.length > 0) {
             existingLi[0].parentNode.removeChild(existingLi[0]);
         }
-
-        document.getElementById("searchBtn").disabled = true;
 
         var BIN;
 
@@ -54,8 +54,14 @@ async function search() {
 
         if (document.getElementById("Name").value != "") {
             itemName = document.getElementById("Name").value;
+            if (document.getElementById("Lvl100").checked) {
+                itemName = "[Lvl 100] " + itemName;
+            }
         } else {
             itemName = "";
+            if (document.getElementById("Lvl100").checked) {
+                itemName = "[Lvl 100] " + itemName;
+            }
         }
 
         var lore = [];
@@ -82,6 +88,8 @@ async function search() {
 
             var inserted;
 
+            var rarity = document.getElementById("Rarity").value;
+
             for (var i = 0, ii = input.length; i < ii; i++) {
                 inserted = false;
                 var loreArray = lore;
@@ -89,10 +97,12 @@ async function search() {
                 if (eval(BIN) && input[i].item_name.toLowerCase().includes(itemName.toLowerCase())) {
                     if (loreArray.length > 0) {
                         if (loreArray.every(item => input[i].item_lore.toLowerCase().includes(item.toLowerCase()))) {
-                            goThroughList(inserted, output, input, i);
+                            Rarity(rarity, inserted, output, input, i);
+                            //goThroughList(inserted, output, input, i);
                         }
                     } else {
-                        goThroughList(inserted, output, input, i);
+                        Rarity(rarity, inserted, output, input, i);
+                        //goThroughList(inserted, output, input, i);
                     }
                 }
             }
@@ -145,9 +155,17 @@ async function search() {
 
             document.getElementById("amountOfAuctions").innerHTML = "Amount Of Auctions: " + amountOfAuctions;
         }
-
+        
         document.getElementById("searchBtn").disabled = false;
+    }
+}
 
+function Rarity(rarity, inserted, output, input, i) {
+    console.log(input[i].tier);
+    if (rarity == "Any") {
+        goThroughList(inserted, output, input, i);
+    } else if (input[i].tier == rarity) {
+        goThroughList(inserted, output, input, i);
     }
 }
 
