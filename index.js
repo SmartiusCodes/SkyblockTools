@@ -112,7 +112,17 @@ async function search() {
 
         document.getElementById("amountOfAuctions").innerHTML = "Amount Of Auctions: 0";
 
+        var maxAuctionsDisplayed;
+
+        if (document.getElementById("auctionsDisplayed").value != undefined) {
+            maxAuctionsDisplayed = document.getElementById("auctionsDisplayed").value;
+        }
+
         for (i = 0; i < output.length; i++) {
+
+            if (maxAuctionsDisplayed == i) {
+                break;
+            }
 
             var tempResult = {};
 
