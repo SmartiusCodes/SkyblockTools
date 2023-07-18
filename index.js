@@ -112,9 +112,9 @@ async function search() {
 
         document.getElementById("amountOfAuctions").innerHTML = "Amount Of Auctions: 0";
 
-        var maxAuctionsDisplayed;
+        var maxAuctionsDisplayed = 25;
 
-        if (document.getElementById("auctionsDisplayed").value != undefined) {
+        if (document.getElementById("auctionsDisplayed").value != "") {
             maxAuctionsDisplayed = document.getElementById("auctionsDisplayed").value;
         }
 
@@ -171,7 +171,6 @@ async function search() {
 }
 
 function Rarity(rarity, inserted, output, input, i) {
-    console.log(input[i].tier);
     if (rarity == "Any") {
         goThroughList(inserted, output, input, i);
     } else if (input[i].tier == rarity) {
