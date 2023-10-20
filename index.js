@@ -19,7 +19,7 @@ async function getData() {
 
     while (status == 200) {
         var response = await fetch("https://api.hypixel.net/skyblock/auctions?page=" + i);
-        status = response.status;
+        status = response.status;    
         if (status != 200) {
             break;
         }
@@ -91,14 +91,20 @@ async function search() {
             var rarity = document.getElementById("Rarity").value;
 
             for (var i = 0, ii = input.length; i < ii; i++) {
+                var indexOfMF = 0;
                 inserted = false;
                 var loreArray = lore;
                 //search:
                 if (eval(BIN) && input[i].item_name.toLowerCase().includes(itemName.toLowerCase())) {
                     if (loreArray.length > 0) {
                         if (loreArray.every(item => input[i].item_lore.toLowerCase().includes(item.toLowerCase()))) {
-                            Rarity(rarity, inserted, output, input, i);
-                            //goThroughList(inserted, output, input, i);
+                            if (input[i].item_lore.charAt(input[i].item_lore.indexOf("Magic Find", indexOfMF)-2) == "✯") {
+                                indexOfMF = input[i].item_lore.indexOf("Magic Find", indexOfMF) + 8;
+                            } else {
+                                indexOfMF = input[i].item_lore.indexOf("Magic Find", indexOfMF) + 8;
+                                Rarity(rarity, inserted, output, input, i);
+                                //goThroughList(inserted, output, input, i);
+                            }
                         }
                     } else {
                         Rarity(rarity, inserted, output, input, i);
@@ -165,7 +171,7 @@ async function search() {
 
             document.getElementById("amountOfAuctions").innerHTML = "Amount Of Auctions: " + amountOfAuctions;
         }
-        
+
         document.getElementById("searchBtn").disabled = false;
     }
 }
