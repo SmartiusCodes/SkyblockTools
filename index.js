@@ -1,5 +1,13 @@
 setInterval(getData, 600000);
 
+function tips() {
+    alert("Welcome to my website! I will give some tips on how the website works. \n First of all, you can not search the auctions while the website is loading them from Hypixel.");
+    alert("Second of all, the [Lore] input box. Type whatever you want to find in the lore of the item and use [&] to look for multiple. \n Here is an example: Dominance & Vitality. You can also type doMinanCe & VitAliTY if you want to :)");
+    alert("Also! If you want to search for [Magic Find] in the lore, but you find [✯ Magic Find] instead, a trick is to search: [Magic Find:]. This is for when you want to find Magic Find and Blazing Fortune attributes. \n The reason being Blazing Fortune and Bobbin' Time has [✯ Magic Find] in their desctription.");
+    alert("Lastly, i want to explain the [Display Auctions] input box. It is a way for the website to not load 100 auctions if it finds that many depending on what you searched. \n That would be boring to go through, so i set the default to 25.");
+    alert("Anyways, hopefully that explains some things. Thank you for using my website!");
+}
+
 var allAuctionPages = [];
 var canSearch;
 
@@ -98,13 +106,14 @@ async function search() {
                 if (eval(BIN) && input[i].item_name.toLowerCase().includes(itemName.toLowerCase())) {
                     if (loreArray.length > 0) {
                         if (loreArray.every(item => input[i].item_lore.toLowerCase().includes(item.toLowerCase()))) {
-                            if (input[i].item_lore.charAt(input[i].item_lore.indexOf("Magic Find", indexOfMF)-2) == "✯") {
-                                indexOfMF = input[i].item_lore.indexOf("Magic Find", indexOfMF) + 8;
-                            } else {
-                                indexOfMF = input[i].item_lore.indexOf("Magic Find", indexOfMF) + 8;
+                            //if (input[i].item_lore.charAt(input[i].item_lore.indexOf("Magic Find", indexOfMF)-2) == "✯" 
+                            //|| input[i].item_lore.charAt(input[i].item_lore.indexOf("Magic Find", indexOfMF)-3) == "✯") {
+                            //    indexOfMF = input[i].item_lore.indexOf("Magic Find", indexOfMF) + 8;
+                            //} else {
+                            //    indexOfMF = input[i].item_lore.indexOf("Magic Find", indexOfMF) + 8;
                                 Rarity(rarity, inserted, output, input, i);
                                 //goThroughList(inserted, output, input, i);
-                            }
+                            //}
                         }
                     } else {
                         Rarity(rarity, inserted, output, input, i);
