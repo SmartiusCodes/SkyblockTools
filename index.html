@@ -4,51 +4,10 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SB AH Viewer</title>
+    <title>Skyblock Tools</title>
 </head>
-<body onload="getData()">
-
-    BIN:
-    <select id="BIN">
-        <option value="true" selected>Yes</option>
-        <option value="false">No</option>
-    </select>
-
-    Rarity
-    <select id="Rarity">
-        <option value="Any" selected>Any</option>
-        <option value="COMMON">Common</option>
-        <option value="UNCOMMON">Uncommon</option>
-        <option value="RARE">Rare</option>
-        <option value="EPIC">Epic</option>
-        <option value="LEGENDARY">Legendary</option>
-        <option value="MYTHIC">Mythic</option>
-        <option value="DIVINE">Divine</option>
-        <option value="SPECIAL">Special</option>
-        <option value="VERY SPECIAL">Very Special</option>
-    </select>
-
-    <input placeholder="Name" id="Name">
-    <input type="checkbox" id="Lvl100">
-    Lvl 100 Pet?
-    <input placeholder="Lore" id="Lore">
-
-    <button id="searchBtn" onclick="search()">Search</button>
-
-    Default 25:
-    <input placeholder="Display Auctions" id="auctionsDisplayed" type="number"> 
-
-    <button onclick="tips()">Tips for the website</button>
-    
-    <p id="pagesIn">Pages Gone Through: 0</p>
-
-    <br>
-
-    <p id="amountOfAuctions">Amount Of Auctions: 0</p>
-
-    <ul id="displayAuctions">
-
-    </ul>
+<body>
+    <a href="SBAHViewer/SBAHViewer.html">SBAH Viewer</a>
+    <a href="ItemList/ItemList.html">Item List</a>
 </body>
-<script src="index.js"></script>
 </html>
