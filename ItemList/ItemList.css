@@ -7,3 +7,18 @@ a {
 body {
     background-color: gray;
 }
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    border: 1px solid black;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    height: fit-content;
+    width: 24%;
+    height: 300px;
+}

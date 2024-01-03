@@ -1,0 +1,613 @@
+{
+    "Diamond": {
+        "NPC": 8,
+        "XP": 0.4,
+        "Item": "DIAMOND",
+        "Enchanted": [
+            "ENCHANTED_DIAMOND",
+            "ENCHANTED_DIAMOND_BLOCK"
+        ]
+    },
+    "Mining": {
+        "Cobblestone": {
+            "Tier": [
+                14,
+                14,
+                12,
+                12,
+                10,
+                10,
+                9,
+                9,
+                8,
+                8,
+                7,
+                6
+            ],
+            "Drops": [
+                {
+                    "Item": "COBBLESTONE",
+                    "NPC": 1,
+                    "XP": 0.1,
+                    "Enchanted": [
+                        "ENCHANTED_COBBLESTONE"
+                    ]
+                }
+            ]
+        },
+        "Obsidian": {
+            "Tier": [
+                45,
+                45,
+                42,
+                42,
+                39,
+                39,
+                35,
+                35,
+                30,
+                30,
+                24,
+                21
+            ],
+            "Drops": [
+                {
+                    "Item": "OBSIDIAN",
+                    "NPC": 7,
+                    "XP": 0.4,
+                    "Enchanted": [
+                        "ENCHANTED_OBSIDIAN"
+                    ]
+                }
+            ]
+        },
+        "Glowstone": {
+            "Tier": [
+                25,
+                25,
+                23,
+                23,
+                21,
+                21,
+                19,
+                19,
+                16,
+                16,
+                13,
+                11
+            ],
+            "Drops": [
+                {
+                    "Item": "GLOWSTONE_DUST",
+                    "NPC": 2,
+                    "XP": 0.2,
+                    "Enchanted": [
+                        "ENCHANTED_GLOWSTONE_DUST",
+                        "ENCHANTED_GLOWSTONE"
+                    ]
+                }
+            ]
+        },
+        "Gravel": {
+            "Tier": [
+                26,
+                26,
+                24,
+                24,
+                22,
+                22,
+                19,
+                19,
+                16,
+                16,
+                13
+            ],
+            "Drops": [
+                {
+                    "Item": "FLINT",
+                    "NPC": 3,
+                    "XP": 0.2,
+                    "Enchanted": [
+                        "ENCHANTED_FLINT"
+                    ]
+                }
+            ]
+        },
+        "Sand": {
+            "Tier": [
+                26,
+                26,
+                24,
+                24,
+                22,
+                22,
+                19,
+                19,
+                16,
+                16,
+                13
+            ],
+            "Drops": [
+                {
+                    "Item": "SAND",
+                    "NPC": 2,
+                    "XP": 0.2,
+                    "Enchanted": [
+                        "ENCHANTED_SAND"
+                    ]
+                }
+            ]
+        },
+        "Red Sand": {
+            "Tier": [
+                26,
+                25,
+                24,
+                23,
+                22,
+                21,
+                20,
+                19,
+                18,
+                16,
+                13,
+                11
+            ],
+            "Drops": [
+                {
+                    "Item": "SAND:1",
+                    "NPC": 5,
+                    "XP": 0.2,
+                    "Enchanted": [
+                        "ENCHANTED_RED_SAND",
+                        "ENCHANTED_RED_SAND_CUBE"
+                    ]
+                }
+            ]
+        },
+        "Myceium": {
+            "Tier": [
+                26,
+                25,
+                24,
+                23,
+                22,
+                21,
+                20,
+                19,
+                18,
+                16,
+                13,
+                11
+            ],
+            "Drops": [
+                {
+                    "Item": "MYCEL",
+                    "NPC": 5,
+                    "XP": 0.2,
+                    "Enchanted": [
+                        "ENCHANTED_MYCELIUM",
+                        "ENCHANTED_MYCELIUM_CUBE"
+                    ]
+                }
+            ]
+        },
+        "Ice": {
+            "Tier": [
+                14,
+                14,
+                12,
+                12,
+                10,
+                10,
+                9,
+                9,
+                8,
+                8,
+                7,
+                6
+            ],
+            "Drops": [
+                {
+                    "Item": "ICE",
+                    "NPC": 0.5,
+                    "XP": 0.5,
+                    "Enchanted": [
+                        "PACKED_ICE",
+                        "ENCHANTED_ICE",
+                        "ENCHANTED_PACKED_ICE"
+                    ]
+                }
+            ]
+        },
+        "Snow": {
+            "Tier": [
+                13,
+                13,
+                12,
+                12,
+                11,
+                11,
+                9.5,
+                9.5,
+                8,
+                8,
+                6.5,
+                5.8
+            ],
+            "Drops": [
+                {
+                    "Item": "SNOW_BALL",
+                    "NPC": 1,
+                    "XP": 0.1,
+                    "Enchanted": [
+                        "SNOW_BLOCK",
+                        "ENCHANTED_SNOW_BLOCK"
+                    ]
+                }
+            ]
+        },
+        "Coal": {
+            "Tier": [
+                15,
+                15,
+                13,
+                13,
+                12,
+                12,
+                10,
+                10,
+                9,
+                9,
+                7,
+                6
+            ],
+            "Drops": [
+                {
+                    "Item": "COAL",
+                    "NPC": 2,
+                    "XP": 0.3,
+                    "Enchanted": [
+                        "ENCHANTED_COAL",
+                        "ENCHANTED_COAL_BLOCK"
+                    ]
+                }
+            ]
+        },
+        "Iron": {
+            "Tier": [
+                17,
+                17,
+                15,
+                15,
+                14,
+                14,
+                12,
+                12,
+                10,
+                10,
+                8,
+                7
+            ],
+            "Drops": [
+                {
+                    "Item": "IRON_INGOT",
+                    "NPC": 3,
+                    "XP": 0.3,
+                    "Enchanted": [
+                        "ENCHANTED_IRON",
+                        "ENCHANTED_IRON_BLOCK"
+                    ]
+                }
+            ]
+        },
+        "Gold": {
+            "Tier": [
+                22,
+                22,
+                20,
+                20,
+                18,
+                18,
+                16,
+                16,
+                14,
+                14,
+                11,
+                9
+            ],
+            "Drops": [
+                {
+                    "Item": "GOLD_INGOT",
+                    "NPC": 4,
+                    "XP": 0.4,
+                    "Enchanted": [
+                        "ENCHANTED_GOLD",
+                        "ENCANTED_GOLD_BLOCK"
+                    ]
+                }
+            ]
+        }
+    },
+    "Foraging": {
+        "Oak": {
+            "Tier": [
+                48,
+                48,
+                45,
+                45,
+                42,
+                42,
+                38,
+                38,
+                33,
+                33,
+                27
+            ],
+            "Drops": [
+                {
+                    "Item": "LOG",
+                    "NPC": 2,
+                    "XP": 0.1,
+                    "Enchanted": [
+                        "ENCHANTED_OAK_LOG"
+                    ]
+                }
+            ]
+        },
+        "Spruce": {
+            "Tier": [
+                48,
+                48,
+                45,
+                45,
+                42,
+                42,
+                38,
+                38,
+                33,
+                33,
+                27
+            ],
+            "Drops": [
+                {
+                    "Item": "LOG:1",
+                    "NPC": 2,
+                    "XP": 0.1,
+                    "Enchanted": [
+                        "ENCHANTED_SPRUCE_LOG"
+                    ]
+                }
+            ]
+        },
+        "Birch": {
+            "Tier": [
+                48,
+                48,
+                45,
+                45,
+                42,
+                42,
+                38,
+                38,
+                33,
+                33,
+                27
+            ],
+            "Drops": [
+                {
+                    "Item": "LOG:2",
+                    "NPC": 2,
+                    "XP": 0.1,
+                    "Enchanted": [
+                        "ENCHANTED_BIRCH_LOG"
+                    ]
+                }
+            ]
+        },
+        "Dark Oak": {
+            "Tier": [
+                48,
+                48,
+                45,
+                45,
+                42,
+                42,
+                38,
+                38,
+                33,
+                33,
+                27
+            ],
+            "Drops": [
+                {
+                    "Item": "LOG_2:1",
+                    "NPC": 2,
+                    "XP": 0.1,
+                    "Enchanted": [
+                        "ENCHANTED_DARK_OAK_LOG"
+                    ]
+                }
+            ]
+        },
+        "Acacia": {
+            "Tier": [
+                48,
+                48,
+                45,
+                45,
+                42,
+                42,
+                38,
+                38,
+                33,
+                33,
+                27
+            ],
+            "Drops": [
+                {
+                    "Item": "LOG_2",
+                    "NPC": 2,
+                    "XP": 0.1,
+                    "Enchanted": [
+                        "ENCHANTED_ACACIA_LOG"
+                    ]
+                }
+            ]
+        },
+        "Jungle": {
+            "Tier": [
+                48,
+                48,
+                45,
+                45,
+                42,
+                42,
+                38,
+                38,
+                33,
+                33,
+                27
+            ],
+            "Drops": [
+                {
+                    "Item": "LOG:3",
+                    "NPC": 2,
+                    "XP": 0.1,
+                    "Enchanted": [
+                        "ENCHANTED_JUNGLE_LOG"
+                    ]
+                }
+            ]
+        }
+    },
+    "Fishing": {
+        "Clay": {
+            "Tier": [
+                32,
+                32,
+                30,
+                30,
+                27.5,
+                27.5,
+                24,
+                24,
+                20,
+                20,
+                16
+            ],
+            "Drops": [
+                {
+                    "Item": "CLAY_BALL",
+                    "NPC": 3,
+                    "XP": 0.1,
+                    "Enchanted": [
+                        {
+                            "CLAY_BLOCK": 4,
+                            "ENCHANTED_CLAY_BALL": 160
+                        }
+                    ]
+                }
+            ]
+        },
+        "Fishing": {
+            "Tier": [
+                78,
+                75,
+                72,
+                72,
+                68,
+                68,
+                62.5,
+                62.5,
+                53,
+                53,
+                35
+            ],
+            "Drops": [
+                {
+                    "Item": "RAW_FISH",
+                    "NPC": 6,
+                    "Chance": 50,
+                    "XP": 0.5,
+                    "Enchanted": [
+                        {
+                            "ENCHANTED_RAW_FISH": 160,
+                            "ENCHANTED_COOKED_FISH": 160
+                        }
+                    ]
+                },
+                {
+                    "Item": "RAW_SALMON",
+                    "NPC": 10,
+                    "Chance": 25,
+                    "XP": 0.7,
+                    "Enchanted": [
+                        {
+                            "ENCHANTED_RAW_SALMON": 160,
+                            "ENCHANTED_COOKED_SALMON": 160
+                        }
+                    ]
+                },
+                {
+                    "Item": "PUFFERFISH",
+                    "NPC": 15,
+                    "Chance": 12,
+                    "XP": 1,
+                    "Enchanted": [
+                        {
+                            "ENCHANTED_PUFFERFISH": 160
+                        }
+                    ]
+                },
+                {
+                    "Item": "CLOWNFISH",
+                    "NPC": 20,
+                    "Chance": 4,
+                    "XP": 2,
+                    "Enchanted": [
+                        {
+                            "ENCHANTED_CLOWNFISH": 160
+                        }
+                    ]
+                },
+                {
+                    "Item": "PRISMARINE_CRYSTAL",
+                    "NPC": 5,
+                    "Chance": 3,
+                    "XP": 0.5,
+                    "Enchanted": [
+                        {
+                            "ENCHANTED_PRISMARINE_CRYSTAL": 80
+                        }
+                    ]
+                },
+                {
+                    "Item": "PRISMARINE_SHARD",
+                    "NPC": 5,
+                    "Chance": 3,
+                    "XP": 0.5,
+                    "Enchanted": [
+                        {
+                            "ENCHANTED_PRISMARINE_SHARD": 80
+                        }
+                    ]
+                },
+                {
+                    "Item": "SPONGE",
+                    "NPC": 5,
+                    "Chance": 3,
+                    "XP": 0.5,
+                    "Enchanted": [
+                        {
+                            "ENCHANTED_SPONGE": 40,
+                            "ENCHANTED_WET_SPONGE": 40
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "Farming": {},
+    "Combat": {}
+}

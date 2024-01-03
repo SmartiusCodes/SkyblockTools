@@ -7,3 +7,7 @@ a {
 body {
     background-color: gray;
 }
+
+.disabled {
+    pointer-events: none;
+}
