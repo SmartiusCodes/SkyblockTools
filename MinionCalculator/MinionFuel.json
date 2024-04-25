@@ -1,0 +1,63 @@
+{
+    "COAL": {
+        "DisplayName": "Coal",
+        "Speed_Multiplier": 1.05,
+        "Duration": 1800,
+        "Description": "Increases minion speed by 5% for 30 minutes"
+    },
+    "COAL_BLOCK": {
+        "DisplayName": "Block of Coal",
+        "Speed_Multiplier": 1.05,
+        "Duration": 18000,
+        "Description": "Increases minion speed by 5% for 5 hours"
+    },
+    "ENCHANTED_COAL":{
+        "DisplayName": "Enchanted Coal",
+        "Speed_Multiplier": 1.1,
+        "Duration": 86400,
+        "Description": "Increases minion speed by 10% for 24 hours"
+    },
+    "ENCHANTED_CHARCOAL": {
+        "DisplayName": "Enchanted Charcoal",
+        "Speed_Multiplier": 1.2,
+        "Duration": 129600,
+        "Description": "Increases minion speed by 20% for 36 hours"
+    },
+    "HAMSTER_WHEEL": {
+        "DisplayName": "Hamster Wheel",
+        "Speed_Multiplier": 1.5,
+        "Duration": 86400,
+        "Description": "Increases minion speed by 50% for 24 hours"
+    },
+    "FOUL_FLESH": {
+        "DisplayName": "Foul Flesh",
+        "Speed_Multiplier": 1.9,
+        "Duration": 1800,
+        "Description": "Increases minion speed by 90% for 5 hours"
+    },
+    "ENCHANTED_BREAD": {
+        "DisplayName": "Enchanted Bread",
+        "Speed_Multiplier": 1.05,
+        "Duration": 43200,
+        "Description": "Increases minion speed by 5% for 12 hours"
+    },
+    "CATALYST": {
+        "DisplayName": "Catalyst",
+        "Output_Multiplier": 3,
+        "Duration": 10800,
+        "Description": "Increases minion output by 3x for 3 hours"
+    },
+    "HYPER_CATALYST": {
+        "DisplayName": "Hyper Catalyst",
+        "Output_Multiplier": 4,
+        "Duration": 21600,
+        "Description": "Increases minion output by 4x for 6 hours"
+    },
+    "CHEESE_FUEL": {
+        "DisplayName": "Tasty Cheese",
+        "Output_Multiplier": 2,
+        "Duration": 3600,
+        "Description": "Increases minion output by x2 for 1 hour"
+    }
+
+}

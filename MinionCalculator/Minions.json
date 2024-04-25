@@ -1,613 +1,1278 @@
 {
-    "Diamond": {
-        "NPC": 8,
-        "XP": 0.4,
-        "Item": "DIAMOND",
-        "Enchanted": [
-            "ENCHANTED_DIAMOND",
-            "ENCHANTED_DIAMOND_BLOCK"
-        ]
-    },
     "Mining": {
         "Cobblestone": {
-            "Tier": [
-                14,
-                14,
-                12,
-                12,
-                10,
-                10,
-                9,
-                9,
-                8,
-                8,
-                7,
-                6
-            ],
-            "Drops": [
-                {
-                    "Item": "COBBLESTONE",
+            "Tier": {
+                "1": {
+                    "Speed": 14,
+                    "Storage": 64
+                },
+                "2": {
+                    "Speed": 14,
+                    "Storage": 192
+                },
+                "3": {
+                    "Speed": 12,
+                    "Storage": 192
+                },
+                "4": {
+                    "Speed": 12,
+                    "Storage": 384
+                },
+                "5": {
+                    "Speed": 10,
+                    "Storage": 384
+                },
+                "6": {
+                    "Speed": 10,
+                    "Storage": 576
+                },
+                "7": {
+                    "Speed": 9,
+                    "Storage": 576
+                },
+                "8": {
+                    "Speed": 9,
+                    "Storage": 768
+                },
+                "9": {
+                    "Speed": 8,
+                    "Storage": 768
+                },
+                "10": {
+                    "Speed": 8,
+                    "Storage": 960
+                },
+                "11": {
+                    "Speed": 7,
+                    "Storage": 960
+                },
+                "12": {
+                    "Speed": 6,
+                    "Storage": 960
+                }
+            },
+            "HasMultipleDrops": false,
+            "Items": {
+                "COBBLESTONE": {
+                    "DisplayName": "Cobblestone",
                     "NPC": 1,
                     "XP": 0.1,
-                    "Enchanted": [
-                        "ENCHANTED_COBBLESTONE"
-                    ]
+                    "OnBazaar": true,
+                    "IsGeneratedItem": true,
+                    "Produce": 1
+                },
+                "ENCHANTED_COBBLESTONE": {
+                    "DisplayName": "Enchanted Cobblestone",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "COBBLESTONE",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
                 }
-            ]
+            }
         },
         "Obsidian": {
-            "Tier": [
-                45,
-                45,
-                42,
-                42,
-                39,
-                39,
-                35,
-                35,
-                30,
-                30,
-                24,
-                21
-            ],
-            "Drops": [
-                {
-                    "Item": "OBSIDIAN",
+            "Tier": {
+                "1": {
+                    "Speed": 45,
+                    "Storage": 64
+                },
+                "2": {
+                    "Speed": 45,
+                    "Storage": 192
+                },
+                "3": {
+                    "Speed": 42,
+                    "Storage": 192
+                },
+                "4": {
+                    "Speed": 42,
+                    "Storage": 384
+                },
+                "5": {
+                    "Speed": 39,
+                    "Storage": 384
+                },
+                "6": {
+                    "Speed": 39,
+                    "Storage": 576
+                },
+                "7": {
+                    "Speed": 35,
+                    "Storage": 576
+                },
+                "8": {
+                    "Speed": 35,
+                    "Storage": 768
+                },
+                "9": {
+                    "Speed": 30,
+                    "Storage": 768
+                },
+                "10": {
+                    "Speed": 30,
+                    "Storage": 960
+                },
+                "11": {
+                    "Speed": 24,
+                    "Storage": 960
+                },
+                "12": {
+                    "Speed": 21,
+                    "Storage": 960
+                }
+            },
+            "HasMultipleDrops": false,
+            "Items": {
+                "OBSIDIAN": {
+                    "DisplayName": "Obsidian",
                     "NPC": 7,
                     "XP": 0.4,
-                    "Enchanted": [
-                        "ENCHANTED_OBSIDIAN"
-                    ]
+                    "OnBazaar": true,
+                    "IsGeneratedItem": true,
+                    "Produce": 1
+                },
+                "ENCHANTED_OBSIDIAN": {
+                    "DisplayName": "Enchanted Obsidian",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "OBSIDIAN",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
                 }
-            ]
+            }
         },
         "Glowstone": {
-            "Tier": [
-                25,
-                25,
-                23,
-                23,
-                21,
-                21,
-                19,
-                19,
-                16,
-                16,
-                13,
-                11
-            ],
-            "Drops": [
-                {
-                    "Item": "GLOWSTONE_DUST",
+            "Tier": {
+                "1": {
+                    "Speed": 25,
+                    "Storage": 64
+                },
+                "2": {
+                    "Speed": 25,
+                    "Storage": 192
+                },
+                "3": {
+                    "Speed": 23,
+                    "Storage": 192
+                },
+                "4": {
+                    "Speed": 23,
+                    "Storage": 384
+                },
+                "5": {
+                    "Speed": 21,
+                    "Storage": 384
+                },
+                "6": {
+                    "Speed": 21,
+                    "Storage": 576
+                },
+                "7": {
+                    "Speed": 19,
+                    "Storage": 576
+                },
+                "8": {
+                    "Speed": 19,
+                    "Storage": 768
+                },
+                "9": {
+                    "Speed": 16,
+                    "Storage": 768
+                },
+                "10": {
+                    "Speed": 16,
+                    "Storage": 960
+                },
+                "11": {
+                    "Speed": 13,
+                    "Storage": 960
+                },
+                "12": {
+                    "Speed": 11,
+                    "Storage": 960
+                }
+            },
+            "HasMultipleDrops": false,
+            "Items": {
+                "GLOWSTONE_DUST": {
+                    "DisplayName": "Glowstone",
                     "NPC": 2,
                     "XP": 0.2,
-                    "Enchanted": [
-                        "ENCHANTED_GLOWSTONE_DUST",
-                        "ENCHANTED_GLOWSTONE"
-                    ]
+                    "OnBazaar": false,
+                    "IsGeneratedItem": true,
+                    "Produce": 3
+                },
+                "GLOWSTONE": {
+                    "DisplayName": "Glowstone Dust",
+                    "OnBazaar": false,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "GLOWSTONE_DUST",
+                        "Amount": 4,
+                        "UpgradeNeeded": "Compacter"
+                    }
+                },
+                "ENCHANTED_GLOWSTONE_DUST": {
+                    "DisplayName": "Enchanted Glowstone Dust",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "GLOWESTONE_DUST",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
+                },
+                "ENCHANTED_GLOWSTONE": {
+                    "DisplayName": "Enchanted Glowstone",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "ENCHANTED_GLOWESTONE_DUST",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
                 }
-            ]
+            }
         },
         "Gravel": {
-            "Tier": [
-                26,
-                26,
-                24,
-                24,
-                22,
-                22,
-                19,
-                19,
-                16,
-                16,
-                13
-            ],
-            "Drops": [
-                {
-                    "Item": "FLINT",
-                    "NPC": 3,
-                    "XP": 0.2,
-                    "Enchanted": [
-                        "ENCHANTED_FLINT"
-                    ]
+            "Tier": {
+                "1": {
+                    "Speed": 26,
+                    "Storage": 128
+                },
+                "2": {
+                    "Speed": 26,
+                    "Storage": 256
+                },
+                "3": {
+                    "Speed": 24,
+                    "Storage": 256
+                },
+                "4": {
+                    "Speed": 24,
+                    "Storage": 384
+                },
+                "5": {
+                    "Speed": 22,
+                    "Storage": 384
+                },
+                "6": {
+                    "Speed": 22,
+                    "Storage": 576
+                },
+                "7": {
+                    "Speed": 19,
+                    "Storage": 576
+                },
+                "8": {
+                    "Speed": 19,
+                    "Storage": 768
+                },
+                "9": {
+                    "Speed": 16,
+                    "Storage": 768
+                },
+                "10": {
+                    "Speed": 16,
+                    "Storage": 960
+                },
+                "11": {
+                    "Speed": 13,
+                    "Storage": 960
                 }
-            ]
+            },
+            "HasMultipleDrops": false,
+            "Items": {
+                "FLINT": {
+                    "DisplayName": "Flint",
+                    "NPC": 4,
+                    "XP": 0.2,
+                    "OnBazaar": true,
+                    "IsGeneratedItem": true,
+                    "Produce": 1
+                },
+                "ENCHANTED_FLINT": {
+                    "DisplayName": "Enchanted Flint",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "FLINT",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
+                }
+            }
         },
         "Sand": {
-            "Tier": [
-                26,
-                26,
-                24,
-                24,
-                22,
-                22,
-                19,
-                19,
-                16,
-                16,
-                13
-            ],
-            "Drops": [
-                {
-                    "Item": "SAND",
+            "Tier": {
+                "1": {
+                    "Speed": 26,
+                    "Storage": 64
+                },
+                "2": {
+                    "Speed": 26,
+                    "Storage": 192
+                },
+                "3": {
+                    "Speed": 24,
+                    "Storage": 192
+                },
+                "4": {
+                    "Speed": 24,
+                    "Storage": 384
+                },
+                "5": {
+                    "Speed": 22,
+                    "Storage": 384
+                },
+                "6": {
+                    "Speed": 22,
+                    "Storage": 576
+                },
+                "7": {
+                    "Speed": 19,
+                    "Storage": 576
+                },
+                "8": {
+                    "Speed": 19,
+                    "Storage": 768
+                },
+                "9": {
+                    "Speed": 16,
+                    "Storage": 768
+                },
+                "10": {
+                    "Speed": 16,
+                    "Storage": 960
+                },
+                "11": {
+                    "Speed": 13,
+                    "Storage": 960
+                }
+            },
+            "HasMultipleDrops": false,
+            "Items": {
+                "SAND": {
+                    "DisplayName": "Sand",
                     "NPC": 2,
                     "XP": 0.2,
-                    "Enchanted": [
-                        "ENCHANTED_SAND"
-                    ]
+                    "OnBazaar": true,
+                    "IsGeneratedItem": true,
+                    "Produce": 1
+                },
+                "ENCHANTED_SAND": {
+                    "DisplayName": "Enchanted Sand",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "SAND",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
                 }
-            ]
+            }
         },
         "Red Sand": {
-            "Tier": [
-                26,
-                25,
-                24,
-                23,
-                22,
-                21,
-                20,
-                19,
-                18,
-                16,
-                13,
-                11
-            ],
-            "Drops": [
-                {
-                    "Item": "SAND:1",
+            "Tier": {
+                "1": {
+                    "Speed": 26,
+                    "Storage": 64
+                },
+                "2": {
+                    "Speed": 25,
+                    "Storage": 128
+                },
+                "3": {
+                    "Speed": 24,
+                    "Storage": 192
+                },
+                "4": {
+                    "Speed": 23,
+                    "Storage": 320
+                },
+                "5": {
+                    "Speed": 22,
+                    "Storage": 384
+                },
+                "6": {
+                    "Speed": 21,
+                    "Storage": 512
+                },
+                "7": {
+                    "Speed": 20,
+                    "Storage": 576
+                },
+                "8": {
+                    "Speed": 19,
+                    "Storage": 704
+                },
+                "9": {
+                    "Speed": 18,
+                    "Storage": 768
+                },
+                "10": {
+                    "Speed": 16,
+                    "Storage": 896
+                },
+                "11": {
+                    "Speed": 13,
+                    "Storage": 960
+                },
+                "12": {
+                    "Speed": 11,
+                    "Storage": 960
+                }
+            },
+            "HasMultipleDrops": false,
+            "Items": {
+                "SAND:1": {
+                    "DisplayName": "Red Sand",
                     "NPC": 5,
                     "XP": 0.2,
-                    "Enchanted": [
-                        "ENCHANTED_RED_SAND",
-                        "ENCHANTED_RED_SAND_CUBE"
-                    ]
+                    "OnBazaar": true,
+                    "IsGeneratedItem": true,
+                    "Produce": 1
+                },
+                "ENCHANTED_RED_SAND": {
+                    "DisplayName": "Enchanted Red Sand",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "SAND:1",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
+                },
+                "ENCHANTED_RED_SAND_CUBE": {
+                    "DisplayName": "Enchanted Red Sand Cube",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "ENCHANTED_RED_SAND",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
                 }
-            ]
+            }
         },
-        "Myceium": {
-            "Tier": [
-                26,
-                25,
-                24,
-                23,
-                22,
-                21,
-                20,
-                19,
-                18,
-                16,
-                13,
-                11
-            ],
-            "Drops": [
-                {
-                    "Item": "MYCEL",
+        "Mycelium": {
+            "Tier": {
+                "1": {
+                    "Speed": 26,
+                    "Storage": 64
+                },
+                "2": {
+                    "Speed": 25,
+                    "Storage": 128
+                },
+                "3": {
+                    "Speed": 24,
+                    "Storage": 192
+                },
+                "4": {
+                    "Speed": 23,
+                    "Storage": 320
+                },
+                "5": {
+                    "Speed": 22,
+                    "Storage": 384
+                },
+                "6": {
+                    "Speed": 21,
+                    "Storage": 512
+                },
+                "7": {
+                    "Speed": 20,
+                    "Storage": 576
+                },
+                "8": {
+                    "Speed": 19,
+                    "Storage": 704
+                },
+                "9": {
+                    "Speed": 18,
+                    "Storage": 768
+                },
+                "10": {
+                    "Speed": 16,
+                    "Storage": 896
+                },
+                "11": {
+                    "Speed": 13,
+                    "Storage": 960
+                },
+                "12": {
+                    "Speed": 11,
+                    "Storage": 960
+                }
+            },
+            "HasMultipleDrops": false,
+            "Items": {
+                "MYCEL": {
+                    "DisplayName": "Mycelium",
                     "NPC": 5,
                     "XP": 0.2,
-                    "Enchanted": [
-                        "ENCHANTED_MYCELIUM",
-                        "ENCHANTED_MYCELIUM_CUBE"
-                    ]
+                    "OnBazaar": true,
+                    "IsGeneratedItem": true,
+                    "Produce": 1
+                },
+                "ENCHANTED_MYCELIUM": {
+                    "DisplayName": "Enchanted Mycelium",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "MYCEL",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
+                },
+                "ENCHANTED_MYCELIUM_CUBE": {
+                    "DisplayName": "Enchanted Mycelium Cube",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "ENCHANTED_MYCELIUM",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
                 }
-            ]
+            }
         },
         "Ice": {
-            "Tier": [
-                14,
-                14,
-                12,
-                12,
-                10,
-                10,
-                9,
-                9,
-                8,
-                8,
-                7,
-                6
-            ],
-            "Drops": [
-                {
-                    "Item": "ICE",
+            "Tier": {
+                "1": {
+                    "Speed": 14,
+                    "Storage": 64
+                },
+                "2": {
+                    "Speed": 14,
+                    "Storage": 192
+                },
+                "3": {
+                    "Speed": 12,
+                    "Storage": 192
+                },
+                "4": {
+                    "Speed": 12,
+                    "Storage": 384
+                },
+                "5": {
+                    "Speed": 10,
+                    "Storage": 384
+                },
+                "6": {
+                    "Speed": 10,
+                    "Storage": 576
+                },
+                "7": {
+                    "Speed": 9,
+                    "Storage": 576
+                },
+                "8": {
+                    "Speed": 9,
+                    "Storage": 768
+                },
+                "9": {
+                    "Speed": 8,
+                    "Storage": 768
+                },
+                "10": {
+                    "Speed": 8,
+                    "Storage": 960
+                },
+                "11": {
+                    "Speed": 7,
+                    "Storage": 960
+                },
+                "12": {
+                    "Speed": 6,
+                    "Storage": 960
+                }
+            },
+            "HasMultipleDrops": false,
+            "Items": {
+                "ICE": {
+                    "DisplayName": "Ice",
                     "NPC": 0.5,
                     "XP": 0.5,
-                    "Enchanted": [
-                        "PACKED_ICE",
-                        "ENCHANTED_ICE",
-                        "ENCHANTED_PACKED_ICE"
-                    ]
+                    "OnBazaar": true,
+                    "IsGeneratedItem": true,
+                    "Produce": 1
+                },
+                "PACKED_ICE": {
+                    "DisplayName": "Packed Ice",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "ICE",
+                        "Amount": 9,
+                        "UpgradeNeeded": "Compacter"
+                    }
+                },
+                "ENCHANTED_ICE": {
+                    "DisplayName": "Enchanted Ice",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "ICE",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
+                },
+                "ENCHANTED_PACKED_ICE": {
+                    "DisplayName": "Enchanted Packed Ice",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "ENCHANTED_ICE",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
                 }
-            ]
-        },
-        "Snow": {
-            "Tier": [
-                13,
-                13,
-                12,
-                12,
-                11,
-                11,
-                9.5,
-                9.5,
-                8,
-                8,
-                6.5,
-                5.8
-            ],
-            "Drops": [
-                {
-                    "Item": "SNOW_BALL",
-                    "NPC": 1,
-                    "XP": 0.1,
-                    "Enchanted": [
-                        "SNOW_BLOCK",
-                        "ENCHANTED_SNOW_BLOCK"
-                    ]
-                }
-            ]
-        },
-        "Coal": {
-            "Tier": [
-                15,
-                15,
-                13,
-                13,
-                12,
-                12,
-                10,
-                10,
-                9,
-                9,
-                7,
-                6
-            ],
-            "Drops": [
-                {
-                    "Item": "COAL",
-                    "NPC": 2,
-                    "XP": 0.3,
-                    "Enchanted": [
-                        "ENCHANTED_COAL",
-                        "ENCHANTED_COAL_BLOCK"
-                    ]
-                }
-            ]
-        },
-        "Iron": {
-            "Tier": [
-                17,
-                17,
-                15,
-                15,
-                14,
-                14,
-                12,
-                12,
-                10,
-                10,
-                8,
-                7
-            ],
-            "Drops": [
-                {
-                    "Item": "IRON_INGOT",
-                    "NPC": 3,
-                    "XP": 0.3,
-                    "Enchanted": [
-                        "ENCHANTED_IRON",
-                        "ENCHANTED_IRON_BLOCK"
-                    ]
-                }
-            ]
-        },
-        "Gold": {
-            "Tier": [
-                22,
-                22,
-                20,
-                20,
-                18,
-                18,
-                16,
-                16,
-                14,
-                14,
-                11,
-                9
-            ],
-            "Drops": [
-                {
-                    "Item": "GOLD_INGOT",
-                    "NPC": 4,
-                    "XP": 0.4,
-                    "Enchanted": [
-                        "ENCHANTED_GOLD",
-                        "ENCANTED_GOLD_BLOCK"
-                    ]
-                }
-            ]
+            }
         }
     },
     "Foraging": {
         "Oak": {
-            "Tier": [
-                48,
-                48,
-                45,
-                45,
-                42,
-                42,
-                38,
-                38,
-                33,
-                33,
-                27
-            ],
-            "Drops": [
-                {
-                    "Item": "LOG",
+            "Tier": {
+                "1": {
+                    "Speed": 48,
+                    "Storage": 64
+                },
+                "2": {
+                    "Speed": 48,
+                    "Storage": 192
+                },
+                "3": {
+                    "Speed": 45,
+                    "Storage": 192
+                },
+                "4": {
+                    "Speed": 45,
+                    "Storage": 384
+                },
+                "5": {
+                    "Speed": 42,
+                    "Storage": 384
+                },
+                "6": {
+                    "Speed": 42,
+                    "Storage": 576
+                },
+                "7": {
+                    "Speed": 38,
+                    "Storage": 576
+                },
+                "8": {
+                    "Speed": 38,
+                    "Storage": 768
+                },
+                "9": {
+                    "Speed": 33,
+                    "Storage": 768
+                },
+                "10": {
+                    "Speed": 33,
+                    "Storage": 960
+                },
+                "11": {
+                    "Speed": 27,
+                    "Storage": 960
+                }
+            },
+            "HasMultipleDrops": false,
+            "Items": {
+                "LOG": {
+                    "DisplayName": "Oak",
                     "NPC": 2,
                     "XP": 0.1,
-                    "Enchanted": [
-                        "ENCHANTED_OAK_LOG"
-                    ]
+                    "OnBazaar": true,
+                    "IsGeneratedItem": true,
+                    "Produce": 4
+                },
+                "ENCHANTED_OAK_LOG": {
+                    "DisplayName": "Enchanted Oak",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "LOG",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
                 }
-            ]
-        },
-        "Spruce": {
-            "Tier": [
-                48,
-                48,
-                45,
-                45,
-                42,
-                42,
-                38,
-                38,
-                33,
-                33,
-                27
-            ],
-            "Drops": [
-                {
-                    "Item": "LOG:1",
-                    "NPC": 2,
-                    "XP": 0.1,
-                    "Enchanted": [
-                        "ENCHANTED_SPRUCE_LOG"
-                    ]
-                }
-            ]
-        },
-        "Birch": {
-            "Tier": [
-                48,
-                48,
-                45,
-                45,
-                42,
-                42,
-                38,
-                38,
-                33,
-                33,
-                27
-            ],
-            "Drops": [
-                {
-                    "Item": "LOG:2",
-                    "NPC": 2,
-                    "XP": 0.1,
-                    "Enchanted": [
-                        "ENCHANTED_BIRCH_LOG"
-                    ]
-                }
-            ]
-        },
-        "Dark Oak": {
-            "Tier": [
-                48,
-                48,
-                45,
-                45,
-                42,
-                42,
-                38,
-                38,
-                33,
-                33,
-                27
-            ],
-            "Drops": [
-                {
-                    "Item": "LOG_2:1",
-                    "NPC": 2,
-                    "XP": 0.1,
-                    "Enchanted": [
-                        "ENCHANTED_DARK_OAK_LOG"
-                    ]
-                }
-            ]
-        },
-        "Acacia": {
-            "Tier": [
-                48,
-                48,
-                45,
-                45,
-                42,
-                42,
-                38,
-                38,
-                33,
-                33,
-                27
-            ],
-            "Drops": [
-                {
-                    "Item": "LOG_2",
-                    "NPC": 2,
-                    "XP": 0.1,
-                    "Enchanted": [
-                        "ENCHANTED_ACACIA_LOG"
-                    ]
-                }
-            ]
-        },
-        "Jungle": {
-            "Tier": [
-                48,
-                48,
-                45,
-                45,
-                42,
-                42,
-                38,
-                38,
-                33,
-                33,
-                27
-            ],
-            "Drops": [
-                {
-                    "Item": "LOG:3",
-                    "NPC": 2,
-                    "XP": 0.1,
-                    "Enchanted": [
-                        "ENCHANTED_JUNGLE_LOG"
-                    ]
-                }
-            ]
+            }
         }
     },
     "Fishing": {
-        "Clay": {
-            "Tier": [
-                32,
-                32,
-                30,
-                30,
-                27.5,
-                27.5,
-                24,
-                24,
-                20,
-                20,
-                16
-            ],
-            "Drops": [
-                {
-                    "Item": "CLAY_BALL",
-                    "NPC": 3,
-                    "XP": 0.1,
-                    "Enchanted": [
-                        {
-                            "CLAY_BLOCK": 4,
-                            "ENCHANTED_CLAY_BALL": 160
-                        }
-                    ]
+        "Fish": {
+            "Tier": {
+                "1": {
+                    "Speed": 78,
+                    "Storage": 640
+                },
+                "2": {
+                    "Speed": 75,
+                    "Storage": 640
+                },
+                "3": {
+                    "Speed": 72,
+                    "Storage": 640
+                },
+                "4": {
+                    "Speed": 72,
+                    "Storage": 704
+                },
+                "5": {
+                    "Speed": 68,
+                    "Storage": 704
+                },
+                "6": {
+                    "Speed": 68,
+                    "Storage": 768
+                },
+                "7": {
+                    "Speed": 62.5,
+                    "Storage": 768
+                },
+                "8": {
+                    "Speed": 62.5,
+                    "Storage": 832
+                },
+                "9": {
+                    "Speed": 53,
+                    "Storage": 832
+                },
+                "10": {
+                    "Speed": 53,
+                    "Storage": 896
+                },
+                "11": {
+                    "Speed": 35,
+                    "Storage": 960
                 }
-            ]
-        },
-        "Fishing": {
-            "Tier": [
-                78,
-                75,
-                72,
-                72,
-                68,
-                68,
-                62.5,
-                62.5,
-                53,
-                53,
-                35
-            ],
-            "Drops": [
+            },
+            "HasMultipleDrops": true,
+            "Items": [
                 {
-                    "Item": "RAW_FISH",
-                    "NPC": 6,
-                    "Chance": 50,
-                    "XP": 0.5,
-                    "Enchanted": [
-                        {
-                            "ENCHANTED_RAW_FISH": 160,
-                            "ENCHANTED_COOKED_FISH": 160
+                    "RAW_FISH": {
+                        "DisplayName": "Raw Fish",
+                        "Chance": 50,
+                        "NPC": 6,
+                        "XP": 0.5,
+                        "OnBazaar": true,
+                        "Produce": 1
+                    },
+                    "ENCHANTED_RAW_FISH": {
+                        "DisplayName": "Enchanted Raw Fish",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "RAW_FISH",
+                            "Amount": 160,
+                            "UpgradeNeeded": "Super Compacter 3000"
                         }
-                    ]
+                    },
+                    "ENCHANTED_COOKED_FISH": {
+                        "DisplayName": "Enchanted Cooked Fish",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "ENCHANTED_RAW_FISH",
+                            "Amount": 160,
+                            "UpgradeNeeded": "Super Compacter 3000"
+                        }
+                    }
                 },
                 {
-                    "Item": "RAW_SALMON",
-                    "NPC": 10,
-                    "Chance": 25,
-                    "XP": 0.7,
-                    "Enchanted": [
-                        {
-                            "ENCHANTED_RAW_SALMON": 160,
-                            "ENCHANTED_COOKED_SALMON": 160
+                    "RAW_SALMON": {
+                        "DisplayName": "Raw Salmon",
+                        "Chance": 25,
+                        "NPC": 10,
+                        "XP": 0.7,
+                        "OnBazaar": true,
+                        "Produce": 1
+                    },
+                    "ENCHANTED_RAW_SALMON": {
+                        "DisplayName": "Enchanted Raw Salmon",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "RAW_SALMON",
+                            "Amount": 160,
+                            "UpgradeNeeded": "Super Compacter 3000"
                         }
-                    ]
+                    },
+                    "ENCHANTED_COOKED_SALMON": {
+                        "DisplayName": "Enchanted Cooked Salmon",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "ENCHANTED_RAW_SALMON",
+                            "Amount": 160,
+                            "UpgradeNeeded": "Super Compacter 3000"
+                        }
+                    }
                 },
                 {
-                    "Item": "PUFFERFISH",
-                    "NPC": 15,
-                    "Chance": 12,
-                    "XP": 1,
-                    "Enchanted": [
-                        {
-                            "ENCHANTED_PUFFERFISH": 160
+                    "PUFFERFISH": {
+                        "DisplayName": "Pufferfish",
+                        "Chance": 12,
+                        "NPC": 15,
+                        "XP": 1,
+                        "OnBazaar": true,
+                        "Produce": 1
+                    },
+                    "ENCHANTED_PUFFERFISH": {
+                        "DisplayName": "Enchanted Pufferfish",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "PUFFERFISH",
+                            "Amount": 160,
+                            "UpgradeNeeded": "Super Compacter 3000"
                         }
-                    ]
+                    }
                 },
                 {
-                    "Item": "CLOWNFISH",
-                    "NPC": 20,
-                    "Chance": 4,
-                    "XP": 2,
-                    "Enchanted": [
-                        {
-                            "ENCHANTED_CLOWNFISH": 160
+                    "CLOWNFISH": {
+                        "DisplayName": "Clownfish",
+                        "Chance": 4,
+                        "NPC": 20,
+                        "XP": 2,
+                        "OnBazaar": true,
+                        "Produce": 1
+                    },
+                    "ENCHANTED_CLOWNFISH": {
+                        "DisplayName": "Enchanted Clownfish",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "CLOWNFISH",
+                            "Amount": 160,
+                            "UpgradeNeeded": "Super Compacter 3000"
                         }
-                    ]
+                    }
                 },
                 {
-                    "Item": "PRISMARINE_CRYSTAL",
-                    "NPC": 5,
-                    "Chance": 3,
-                    "XP": 0.5,
-                    "Enchanted": [
-                        {
-                            "ENCHANTED_PRISMARINE_CRYSTAL": 80
+                    "PRISMARINE_CRYSTAL": {
+                        "DisplayName": "Prismarine Crystal",
+                        "Chance": 3,
+                        "NPC": 5,
+                        "XP": 0.5,
+                        "OnBazaar": true,
+                        "Produce": 1
+                    },
+                    "ENCHANTED_PRISMARINE_CRYSTALS": {
+                        "DisplayName": "Enchanted Prismarine Crystal",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "PRISMARINE_CRYSTAL",
+                            "Amount": 80,
+                            "UpgradeNeeded": "Super Compacter 3000"
                         }
-                    ]
+                    }
                 },
                 {
-                    "Item": "PRISMARINE_SHARD",
-                    "NPC": 5,
-                    "Chance": 3,
-                    "XP": 0.5,
-                    "Enchanted": [
-                        {
-                            "ENCHANTED_PRISMARINE_SHARD": 80
+                    "PRISMARINE_SHARD": {
+                        "DisplayName": "Prismarine Shard",
+                        "Chance": 3,
+                        "NPC": 5,
+                        "XP": 0.5,
+                        "OnBazaar": true,
+                        "Produce": 1
+                    },
+                    "ENCHANTED_PRISMARINE_SHARD": {
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "PRISMARINE_SHARD",
+                            "Amount": 80,
+                            "UpgradeNeeded": "Super Compacter 3000"
                         }
-                    ]
+                    }
                 },
                 {
-                    "Item": "SPONGE",
-                    "NPC": 5,
-                    "Chance": 3,
-                    "XP": 0.5,
-                    "Enchanted": [
-                        {
-                            "ENCHANTED_SPONGE": 40,
-                            "ENCHANTED_WET_SPONGE": 40
+                    "SPONGE": {
+                        "DisplayName": "Sponge",
+                        "Chance": 3,
+                        "NPC": 5,
+                        "XP": 0.5,
+                        "OnBazaar": true,
+                        "Produce": 1
+                    },
+                    "ENCHANTED_SPONGE": {
+                        "DisplayName": "Enchanted Sponge",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "SPONGE",
+                            "Amount": 40,
+                            "UpgradeNeeded": "Super Compacter 3000"
                         }
-                    ]
+                    },
+                    "ENCHANTED_WET_SPONGE": {
+                        "DisplayName": "Enchanted Wet Sponge",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "ENCHANTED_SPONGE",
+                            "Amount": 40,
+                            "UpgradeNeeded": "Super Compacter 3000"
+                        }
+                    }
                 }
             ]
         }
     },
-    "Farming": {},
-    "Combat": {}
+    "Farming": {
+        "Wheat": {
+            "Tier": {
+                "1": {
+                    "Speed": 15,
+                    "Storage": 128
+                },
+                "2": {
+                    "Speed": 15,
+                    "Storage": 256
+                },
+                "3": {
+                    "Speed": 13,
+                    "Storage": 256
+                },
+                "4": {
+                    "Speed": 13,
+                    "Storage": 384
+                },
+                "5": {
+                    "Speed": 11,
+                    "Storage": 384
+                },
+                "6": {
+                    "Speed": 11,
+                    "Storage": 576
+                },
+                "7": {
+                    "Speed": 10,
+                    "Storage": 576
+                },
+                "8": {
+                    "Speed": 10,
+                    "Storage": 768
+                },
+                "9": {
+                    "Speed": 9,
+                    "Storage": 768
+                },
+                "10": {
+                    "Speed": 9,
+                    "Storage": 960
+                },
+                "11": {
+                    "Speed": 8,
+                    "Storage": 960
+                },
+                "12": {
+                    "Speed": 7,
+                    "Storage": 960
+                }
+            },
+            "HasMultipleDrops": true,
+            "Items": [
+                {
+                    "SEEDS": {
+                        "DisplayName": "Seeds",
+                        "Chance": 100,
+                        "NPC": 3,
+                        "XP": 0.1,
+                        "OnBazaar": true,
+                        "Produce": 1
+                    },
+                    "ENCHANTED_SEEDS": {
+                        "DisplayName": "Enchanted Seeds",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "SEEDS",
+                            "Amount": 160,
+                            "UpgradeNeeded": "Super Compacter 3000"
+                        }
+                    },
+                    "BOX_OF_SEEDS": {
+                        "DisplayName": "Box of Seeds",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "ENCHANTED_SEEDS",
+                            "Amount": 160,
+                            "UpgradeNeeded": "Super Compacter 3000"
+                        }
+                    }
+                },
+                {
+                    "WHEAT": {
+                        "DisplayName": "Wheat",
+                        "Chance": 100,
+                        "NPC": 6,
+                        "XP": 0.2,
+                        "OnBazaar": true,
+                        "Produce": 1
+                    },
+                    "HAY_BLOCK": {
+                        "DisplayName": "Hay Bale",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "WHEAT",
+                            "Amount": 9,
+                            "UpgradeNeeded": "Compacter"
+                        }
+                    },
+                    "ENCHANTED_HAY_BLOCK": {
+                        "DisplayName": "Enchanted Hay Bale",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "HAY_BALE",
+                            "Amount": 144,
+                            "UpgradeNeeded": "Super Compacter 3000"
+                        }
+                    },
+                    "TIGHTLY_TIED_HAY_BALE": {
+                        "DisplayName": "Tightly-Tied Hay Bale",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "ENCHANTED_HAY_BLOCK",
+                            "Amount": 144,
+                            "UpgradeNeeded": "Super Compacter 3000"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "Husbandry": {
+        "Cow": {
+            "Tiers": {
+                "1": {
+                    "Speed": 26,
+                    "Storage": 128
+                },
+                "2": {
+                    "Speed": 26,
+                    "Storage": 256
+                },
+                "3": {
+                    "Speed": 24,
+                    "Storage": 256
+                },
+                "4": {
+                    "Speed": 24,
+                    "Storage": 384
+                },
+                "5": {
+                    "Speed": 22,
+                    "Storage": 384
+                },
+                "6": {
+                    "Speed": 22,
+                    "Storage": 576
+                },
+                "7": {
+                    "Speed": 20,
+                    "Storage": 576
+                },
+                "8": {
+                    "Speed": 20,
+                    "Storage": 768
+                },
+                "9": {
+                    "Speed": 17,
+                    "Storage": 768
+                },
+                "10": {
+                    "Speed": 17,
+                    "Storage": 960
+                },
+                "11": {
+                    "Speed": 13,
+                    "Storage": 960
+                },
+                "12": {
+                    "Speed": 10,
+                    "Storage": 960
+                }
+            },
+            "HasMultipleDrops": true,
+            "Items": [
+                {
+                    "RAW_BEEF": {
+                        "DisplayName": "Raw Beef",
+                        "Chance": 100,
+                        "NPC": 4,
+                        "XP": 0.1,
+                        "OnBazaar": true,
+                        "Produce": 1
+                    },
+                    "ENCHANTED_RAW_BEEF": {
+                        "DisplayName": "Enchanted Raw Beef",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "RAW_BEEF",
+                            "Amount": 160,
+                            "UpgradeNeeded": "Super Compacter 3000"
+                        }
+                    }
+                },
+                {
+                    "LEATHER": {
+                        "DisplayName": "Leather",
+                        "Chance": 100,
+                        "NPC": 3,
+                        "XP": 0.2,
+                        "OnBazaar": true,
+                        "Produce": 1
+                    },
+                    "ENCHANTED_LEATHER": {
+                        "DisplayName": "Enchanted Leather",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "LEATHER",
+                            "Amount": 576,
+                            "UpgradeNeeded": "Super Compacter 3000"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "Combat": {
+        "Zombie": {
+            "Tier": {
+                "1": {
+                    "Speed": 26,
+                    "Storage": 64
+                },
+                "2": {
+                    "Speed": 26,
+                    "Storage": 192
+                },
+                "3": {
+                    "Speed": 24,
+                    "Storage": 192
+                },
+                "4": {
+                    "Speed": 24,
+                    "Storage": 384
+                },
+                "5": {
+                    "Speed": 22,
+                    "Storage": 384
+                },
+                "6": {
+                    "Speed": 22,
+                    "Storage": 576
+                },
+                "7": {
+                    "Speed": 20,
+                    "Storage": 576
+                },
+                "8": {
+                    "Speed": 20,
+                    "Storage": 768
+                },
+                "9": {
+                    "Speed": 17,
+                    "Storage": 768
+                },
+                "10": {
+                    "Speed": 17,
+                    "Storage": 960
+                },
+                "11": {
+                    "Speed": 13,
+                    "Storage": 960
+                }
+            },
+            "HasMultipleDrops": true,
+            "Items": [
+                {
+                    "ROTTEN_FLESH": {
+                        "DisplayName": "Rotten Flesh",
+                        "Chance": 100,
+                        "NPC": 2,
+                        "XP": 0.3,
+                        "OnBazaar": true,
+                        "Produce": 1
+                    },
+                    "ENCHANTED_ROTTEN_FLESH": {
+                        "DisplayName": "Enchanted Rotten Flesh",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "ROTTEN_FLESH",
+                            "Amount": 160,
+                            "UpgradeNeeded": "Super Compacter 3000"
+                        }
+                    }
+                },
+                {
+                    "CARROT_ITEM": {
+                        "DisplayName": "Carrot",
+                        "Chance": 1,
+                        "NPC": 3,
+                        "XP": 0.1,
+                        "OnBazaar": true,
+                        "Produce": 1
+                    },
+                    "ENCHANTED_CARROT": {
+                        "DisplayName": "Enchanted Carrot",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "CARROT_ITEM",
+                            "Amount": 160,
+                            "UpgradeNeeded": "Super Compacter 3000"
+                        }
+                    }
+                },
+                {
+                    "POTATO_ITEM": {
+                        "DisplayName": "Potato",
+                        "Chance": 1,
+                        "NPC": 3,
+                        "XP": 0.1,
+                        "OnBazaar": true,
+                        "Produce": 1
+                    },
+                    "ENCHANTED_POTATO": {
+                        "DisplayName": "Enchanted Potato",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "POTATO_ITEM",
+                            "Amount": 160,
+                            "UpgradeNeeded": "Super Compacter 3000"
+                        }
+                    },
+                    "ENCHANTED_BAKED_POTATO": {
+                        "DisplayName": "Enchanted Baked Potato",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "ENCHANTED_POTATO",
+                            "Amount": 160,
+                            "UpgradeNeeded": "Super Compacter 3000"
+                        }
+                    }
+                },
+                {
+                    "POISONOUS_POTATO": {
+                        "DisplayName": "Poisonous Potato",
+                        "Chance": 2,
+                        "NPC": 10,
+                        "XP": 0,
+                        "OnBazaar": true,
+                        "Produce": 1
+                    },
+                    "ENCHANTED_POISONOUS_POTATO": {
+                        "DisplayName": "Enchanted Poisonous Potato",
+                        "OnBazaar": true,
+                        "Craft": {
+                            "Requires": "POISONOUS_POTATO",
+                            "Amount": 160,
+                            "UpgradeNeeded": "Super Compacter 3000"
+                        }
+                    }
+                }
+            ]
+        }
+    }
 }

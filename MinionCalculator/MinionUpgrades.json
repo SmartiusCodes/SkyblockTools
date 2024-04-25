@@ -1,0 +1,327 @@
+{
+    "AUTOMATED_SHIPPING": {
+        "BUDGET_HOPPER": {
+            "DisplayName": "Budget Hopper",
+            "NPC": 0.5,
+            "Description": "Sells excess resources for 50% of their NPC sell price"
+        },
+        "ENCHANTED_HOPPER": {
+            "DisplayName": "Enchanted Hopper",
+            "NPC": 0.9,
+            "Description": "Sells excess resources for 90% of their NPC sell price"
+        }
+    },
+    "MINION_UPGRADES": {
+        "AUTO_SMELTER": {
+            "Description": "Converts resources into their smelted form"
+        },
+        "COMPACTOR": {
+            "Description": "Compacts resources into their block form"
+        },
+        "SUPER_COMPACTOR_3000": {
+            "Description": "Compacts resources into their enchanted form"
+        },
+        "DWARVEN_COMPACTOR": {
+            "Description": "Smelts resources and compacts items into their enchanted form"
+        },
+        "DIAMOND_SPREADING": {
+            "Produces": {
+                "DIAMOND": {
+                    "DisplayName": "Diamond",
+                    "NPC": 8,
+                    "OnBazaar": true,
+                    "IsGeneratedItem": true,
+                    "Produce": 0.1
+                },
+                "DIAMOND_BLOCK": {
+                    "DisplayName": "Diamond Block",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "DIAMOND",
+                        "Amount": 9,
+                        "UpgradeNeeded": "Compacter"
+                    }
+                },
+                "ENCHANTED_DIAMOND": {
+                    "DisplayName": "Enchanted Diamond",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "DIAMOND",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
+                },
+                "ENCHANTED_DIAMOND_BLOCK": {
+                    "DisplayName": "Enchanted Diamond Block",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "ENCHANTED_DIAMOND",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
+                }
+            },
+            "Description": "Generates a Diamond 10% of the time another resource is generated"
+        },
+        "POTATO_SPREADING": {
+            "Produces": {
+                "POTATO_ITEM": {
+                    "DisplayName": "Potato",
+                    "NPC": 3,
+                    "OnBazaar": true,
+                    "IsGeneratedItem": true,
+                    "Produce": 0.05
+                },
+                "ENCHANTED_POTATO": {
+                    "DisplayName": "Enchanted Potato",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "POTATO_ITEM",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
+                },
+                "ENCHANTED_BAKED_POTATO": {
+                    "DisplayName": "Enchanted Baked Potato",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "ENCHANTED_POTATO",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
+                }
+            },
+            "Description": "Generates a Potato occasionally when another resource is generated"
+        },
+        "MINION_EXPANDER": {
+            "Speed_Multiplier": 1.05,
+            "Description": "Expands minion range by 1 block and increases minion speed by 5%"
+        },
+        "ENCHANTED_EGG": {
+            "Produces": {
+                "EGG": {
+                    "DisplayName": "Egg",
+                    "NPC": 3,
+                    "OnBazaar": true,
+                    "IsGeneratedItem": true,
+                    "Produce": 1
+                },
+                "ENCHANTED_EGG": {
+                    "DisplayName": "Enchanted Egg",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "EGG",
+                        "Amount": 144,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
+                },
+                "SUPER_EGG": {
+                    "DisplayName": "Super Enchanted Egg",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "ENCHANTED_EGG",
+                        "Amount": 144,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
+                },
+                "OMEGA_EGG": {
+                    "DisplayName": "Omega Enchanted Egg",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "SUPER_EGG",
+                        "Amount": 9,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
+                }
+            },
+            "Description": "Guarantees that each Chicken generated by a Chicken Minion will drop an Egg"
+        },
+        "FLINT_SHOVEL": {
+            "Minion_Specific": {
+                "WorksOnOtherMinions": false,
+                "Mining": {
+                    "Gravel": {
+                        "Replace": {
+                            "ItemToBeReplaced": "Gravel",
+                            "ItemReplacing": "Flint"
+                        }
+                    }
+                }
+            },
+            "Description": "Guarantees that each Gravel generated by a Gravel Minion will drop Flint"
+        },
+        "FLYCATCHER_UPGRADE": {
+            "Speed_Multiplier": 1.2,
+            "Description": "Increases minion speed by 20%"
+        },
+        "KRAMPUS_HELMET": {
+            "Produces": {
+                "RED_GIFT": {
+                    "DisplayName": "Red Gift",
+                    "NPC": 0,
+                    "OnBazaar": true,
+                    "IsGeneratedItem": true,
+                    "Produce": 0.000045
+                }
+            },
+            "Description": "Generates a Red Gift occasionally when another resource is generated"
+        },
+        "LESSER_SOULFLOW_ENGINE": {
+            "Speed_Multiplier": 0.5,
+            "Produces": {
+                "RAW_SOULFLOW": {
+                    "DisplayName": "Raw Soulflow",
+                    "NPC": 0,
+                    "OnBazaar": true,
+                    "IsGeneratedItem": true,
+                    "Produce": 1,
+                    "Cooldown": 180
+                },
+                "SOULFLOW": {
+                    "DisplayName": "Soulflow",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "RAW_SOULFLOW",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
+                }
+            },
+            "Description": "Reduces minion output by 50% but generates Soulflow items"
+        },
+        "SOULFLOW_ENGINE": {
+            "Speed_Multiplier": 0.5,
+            "Minion_Specific": {
+                "WorksOnOtherMinions": true,
+                "Combat": {
+                    "Voidling": {
+                        "Speed_Multiplier": 1.03
+                    }
+                }
+            },
+            "Produces": {
+                "RAW_SOULFLOW": {
+                    "DisplayName": "Raw Soulflow",
+                    "NPC": 0,
+                    "OnBazaar": true,
+                    "IsGeneratedItem": true,
+                    "Produce": 1,
+                    "Cooldown": 90
+                },
+                "SOULFLOW": {
+                    "DisplayName": "Soulflow",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "RAW_SOULFLOW",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
+                }
+            },
+            "Description": "Reduces minion output by 50% but generates Soulflow items\nIncreases drops by 3% per level in Voidling Minions"
+        },
+        "CORRUPT_SOIL": {
+            "Minion_Specific": {
+                "WorksOnOtherMinions": false,
+                "Combat": {
+                    "AnyType": {
+                        "Corrupts": true
+                    }
+                },
+                "Husbandry": {
+                    "AnyType": {
+                        "Corrupts": true
+                    }
+                }
+            },
+            "HasMultipleDrops": true,
+            "Produces": [
+                {
+                    "CORRUPTED_FRAGMENT": {
+                        "DisplayName": "Corrupted Fragment",
+                        "NPC": 20,
+                        "OnBazaar": false,
+                        "IsGeneratedItem": true,
+                        "produce": 1
+                    }
+                },
+                {
+                    "SULPHUR_ORE": {
+                        "DisplayName": "Sulphur",
+                        "NPC": 10,
+                        "OnBazaar": true,
+                        "IsGeneratedItem": true,
+                        "produce": 1
+                    },
+                    "ENCHANTED_SULPHUR": {
+                        "DisplayName": "Enchanted Sulphur",
+                        "OnBazaar": true,
+                        "IsGeneratedItem": false,
+                        "Craft": {
+                            "Requires": "SULPHUR_ORE",
+                            "Amount": 160,
+                            "UpgradeNeeded": "Super Compacter 3000"
+                        }
+                    },
+                    "ENCHANTED_SULPHUR_CUBE": {
+                        "DisplayName": "Enchanted Sulphur Cube",
+                        "OnBazaar": true,
+                        "IsGeneratedItem": false,
+                        "Craft": {
+                            "Requires": "ENCHANTED_SULPHUR",
+                            "Amount": 160,
+                            "UpgradeNeeded": "Super Compacter 3000"
+                        }
+                    }
+                }
+            ],
+            "Description": "Place it in any mob spawning minion and it will turn nearby mobs into their corrupted forms"
+        },
+        "BERBERIS_FUEL_INJECTOR": {
+            "Minion_Specific": {
+                "WorksOnOtherMinions": false,
+                "Farming": {
+                    "AnyType": {
+                        "Speed_Multiplier": 1.15
+                    }
+                },
+                "Husbandry": {
+                    "AnyType": {
+                        "Speed_Multiplier": 1.15
+                    }
+                }
+            },
+            "Produces": {
+                "LUSH_BERBERIS": {
+                    "DisplayName": "Lush Berberis",
+                    "NPC": 3,
+                    "OnBazaar": true,
+                    "IsGeneratedItem": true,
+                    "Produce": 1,
+                    "Cooldown": 300
+                },
+                "ENCHANTED_LUSH_BERBERIS": {
+                    "DisplayName": "Enchanted Luch Berberis",
+                    "OnBazaar": true,
+                    "IsGeneratedItem": false,
+                    "Craft": {
+                        "Requires": "LUSH_BERBERIS",
+                        "Amount": 160,
+                        "UpgradeNeeded": "Super Compacter 3000"
+                    }
+                }
+            },
+            "Description": "Place it into a Farming and it will increase its speed by 15% and make it occasionally generate Minecraft items large fern.png Lush Berberis"
+        }
+    }
+}
