@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="MinionCalculator.css">
@@ -7,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minion Calculator</title>
 </head>
+
 <body>
     <a href="https://smartiuscodes.github.io/SkyblockTools/">Back</a>
-    <a class="infoBtn" onclick="Info()">Info</a>
     <br><br>
     <a onclick="Add()">Add Calculator</a>
     <a class="resetBtn" onClick="window.location.reload();">Reset Calculations</a>
@@ -18,14 +19,33 @@
     <a onclick="Calculate()">Calculate!</a>
     <br><br>
 
-    <div id="minionCalculator0">
-        Minion Output Material:<br><input type="text"><br>
-        Average Drop:<br><input type="number"><br>
-        Amount of Minion:<br><input type="number"><br>
-        Time Between Actions:<br><input type="number"><br>
-        Speed Buff:<br><input value=1 type="number">
+    Is It Derpy?: <input type="checkbox" id="derpy" onclick="isDerpy()"><br><br>
+
+    <div class="div" id="minionCalculator0">
+        Minion Output Material:&nbsp;<input type="text">
+        <br><br>
+        Average Drop:&nbsp;<input type="number">
+        <br><br>
+        Amount of Minion:&nbsp;<input type="number">
+        <br><br>
+        Time Between Actions:&nbsp;<input type="number">
+        <br><br>
+        Flycatchers?:&nbsp;<input type="number" value=0>
+        <br><br>
+        Pet Buff %: <input type="number" value=0>
+        <br><br>
+        <div class="fuel">
+            <button onclick="myFunction(this)" class="fuelbtn">Fuel</button>
+            <div id="fuelDropdown0" class="fuel-content">
+                <a onclick="selectFuel(this, 0)">None</a>
+                <a onclick="selectFuel(this, 0.25)">Lava Bucket</a>
+                <a onclick="selectFuel(this, 0.30)">Magma Bucket</a>
+                <a onclick="selectFuel(this, 0.35)">Plasma Bucket</a>
+            </div>
+        </div>
     </div>
 
+    <script src="MinionCalculator.js"></script>
 </body>
-<script src="MinionCalculator.js"></script>
+
 </html>

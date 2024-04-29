@@ -42,12 +42,16 @@ $.getJSON("Minions.json", function(minions) {
     console.log(minions.Mining.Ice); // this will show the info it in firebug console
 });
 */
+let derpy = 1;
+let fuelBuff = [];
+
 let divNumber = 0;
 
 function Add() {
     const node = document.getElementById(`minionCalculator${divNumber}`);
     divNumber++;
-    const clone = node.cloneNode(true);
+    clone = node.cloneNode(true);
+    clone.getElementsByTagName('div')[1].id = `fuelDropdown${divNumber}`;
     clone.id = `minionCalculator${divNumber}`;
     document.body.appendChild(clone);
 }
@@ -55,16 +59,29 @@ function Add() {
 function Calculate() {
     let Minions = {};
     let alertMessage;
-    for (let i = 0; i < document.getElementsByTagName('div').length; i++) {
+    for (let i = 0; i < document.getElementsByTagName('div').length / 3; i++) {
         let minionOutput = document.getElementById(`minionCalculator${i}`).getElementsByTagName("input")[0].value;
         let drops = document.getElementById(`minionCalculator${i}`).getElementsByTagName("input")[1].value;
         let amount = document.getElementById(`minionCalculator${i}`).getElementsByTagName("input")[2].value;
         let speed = document.getElementById(`minionCalculator${i}`).getElementsByTagName("input")[3].value;
-        let buff = document.getElementById(`minionCalculator${i}`).getElementsByTagName("input")[4].value;
-        if (minionOutput == "" || drops == "" || amount == "" || speed == "") {
+        let flycatcher = document.getElementById(`minionCalculator${i}`).getElementsByTagName("input")[4].value;
+        let petBuff = document.getElementById(`minionCalculator${i}`).getElementsByTagName("input")[5].value;
+
+        if (minionOutput == "" || drops == "" || amount == "" || speed == "" || flycatcher == "" || petBuff == "") {
             alert("fill all fields!");
+            return;
         }
-        let result = 86400 / speed * buff * drops * amount;
+
+        flycatcher *= 0.2;
+
+        petBuff *= 0.1;
+
+        if (fuelBuff[i] == undefined) {
+            fuelBuff[i] = 0;
+        }
+        let result = (86400 / (speed / (1 + fuelBuff[i] + flycatcher + petBuff)) * drops * amount) * derpy;
+
+
         if (Object.keys(Minions).some(function (k) { return ~k.indexOf(minionOutput) })) {
             result = Number(Minions[minionOutput]) + Number(result);
             Minions[minionOutput] = (Math.round(result * 100) / 100).toFixed(2);
@@ -85,9 +102,42 @@ function Calculate() {
             alertMessage = alertMessage.concat("\n", temp);
         }
     }
-    alert(alertMessage);
+    alert("Per Day:\n" + alertMessage);
 }
 
-function Info() {
-    alert("Welcome to my minion calculator!\n\nA heads up is that [Speed Buff] needs to be 1 or more. So if you have a 25% buff, you need to input 1.25");
+function isDerpy() {
+    var checkBox = document.getElementById("derpy");
+
+    // If the checkbox is checked, display the output text
+    if (checkBox.checked == true) {
+        derpy = 2;
+    } else {
+        derpy = 1;
+    }
+}
+
+function myFunction(thisObj) {
+    let divId = thisObj.parentNode.parentNode.id;
+    let number = divId.slice(16, divId.length);
+    document.getElementById(`fuelDropdown${number}`).classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function (event) {
+    if (!event.target.matches('.fuelbtn')) {
+        var dropdowns = document.getElementsByClassName("fuel-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+
+function selectFuel(thisObj, buff) {
+    let divId = thisObj.parentNode.parentNode.parentNode.id;
+    let number = divId.slice(16, divId.length);
+    fuelBuff[number] = buff;
 }
