@@ -60,12 +60,14 @@ function Calculate() {
     let Minions = {};
     let alertMessage;
     for (let i = 0; i < document.getElementsByTagName('div').length / 3; i++) {
+        let infusedBonus = 0;
         let minionOutput = document.getElementById(`minionCalculator${i}`).getElementsByTagName("input")[0].value;
         let drops = document.getElementById(`minionCalculator${i}`).getElementsByTagName("input")[1].value;
         let amount = document.getElementById(`minionCalculator${i}`).getElementsByTagName("input")[2].value;
         let speed = document.getElementById(`minionCalculator${i}`).getElementsByTagName("input")[3].value;
         let flycatcher = document.getElementById(`minionCalculator${i}`).getElementsByTagName("input")[4].value;
         let petBuff = document.getElementById(`minionCalculator${i}`).getElementsByTagName("input")[5].value;
+        let mithrilInfused = document.getElementById(`minionCalculator${i}`).getElementsByTagName("input")[6].checked;
 
         if (minionOutput == "" || drops == "" || amount == "" || speed == "" || flycatcher == "" || petBuff == "") {
             alert("fill all fields!");
@@ -79,7 +81,12 @@ function Calculate() {
         if (fuelBuff[i] == undefined) {
             fuelBuff[i] = 0;
         }
-        let result = (86400 / (speed / (1 + fuelBuff[i] + flycatcher + petBuff)) * drops * amount) * derpy;
+
+        if (mithrilInfused) {
+            infusedBonus = 0.1;
+        }
+
+        let result = (86400 / (speed / (1 + fuelBuff[i] + flycatcher + petBuff + infusedBonus)) * drops * amount) * derpy;
 
 
         if (Object.keys(Minions).some(function (k) { return ~k.indexOf(minionOutput) })) {
