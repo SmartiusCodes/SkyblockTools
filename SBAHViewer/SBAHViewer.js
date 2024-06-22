@@ -27,7 +27,7 @@ async function getData() {
 
     while (status == 200) {
         var response = await fetch("https://api.hypixel.net/skyblock/auctions?page=" + i);
-        status = response.status;    
+        status = response.status;
         if (status != 200) {
             break;
         }
@@ -58,18 +58,10 @@ async function search() {
         if (document.getElementById("BIN").value == "true") { BIN = "input[i].bin == true" };
         if (document.getElementById("BIN").value == "false") { BIN = "input[i].bin == false" };
 
-        var itemName;
+        var itemName = document.getElementById("Name").value;
 
-        if (document.getElementById("Name").value != "") {
-            itemName = document.getElementById("Name").value;
-            if (document.getElementById("Lvl100").checked) {
-                itemName = "[Lvl 100] " + itemName;
-            }
-        } else {
-            itemName = "";
-            if (document.getElementById("Lvl100").checked) {
-                itemName = "[Lvl 100] " + itemName;
-            }
+        if (document.getElementById("petLevel").value != "") {
+            itemName = "[Lvl " + document.getElementById("petLevel").value + "]" + itemName;
         }
 
         var lore = [];
@@ -81,7 +73,8 @@ async function search() {
                     loreAmount = document.getElementById("Lore").value.split(" & ")
                     lore.push(loreAmount[i]);
                 }
-            } else {
+            }
+            else {
                 lore.push(document.getElementById("Lore").value);
             }
         } else {
@@ -103,21 +96,17 @@ async function search() {
                 inserted = false;
                 var loreArray = lore;
                 //search:
-                if (eval(BIN) && input[i].item_name.toLowerCase().includes(itemName.toLowerCase())) {
+                if (itemName.includes("!")) {
+                    var blockedWord = itemName.substring(itemName.indexOf("!") + 1);
+                    itemName = itemName.substring(0, itemName.indexOf("!") - 1);
+                }
+                if (eval(BIN) && input[i].item_name.toLowerCase().includes(itemName.toLowerCase()) && !(input[i].item_name.toLowerCase().includes(blockedWord))) {
                     if (loreArray.length > 0) {
                         if (loreArray.every(item => input[i].item_lore.toLowerCase().includes(item.toLowerCase()))) {
-                            //if (input[i].item_lore.charAt(input[i].item_lore.indexOf("Magic Find", indexOfMF)-2) == "✯" 
-                            //|| input[i].item_lore.charAt(input[i].item_lore.indexOf("Magic Find", indexOfMF)-3) == "✯") {
-                            //    indexOfMF = input[i].item_lore.indexOf("Magic Find", indexOfMF) + 8;
-                            //} else {
-                            //    indexOfMF = input[i].item_lore.indexOf("Magic Find", indexOfMF) + 8;
-                                Rarity(rarity, inserted, output, input, i);
-                                //goThroughList(inserted, output, input, i);
-                            //}
+                            Rarity(rarity, inserted, output, input, i);
                         }
                     } else {
                         Rarity(rarity, inserted, output, input, i);
-                        //goThroughList(inserted, output, input, i);
                     }
                 }
             }
