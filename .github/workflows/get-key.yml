@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: my-step
-      - run: node -e "console.log(process.env.API_KEY)"
+      - run: ubuntu-latest
         env:
             API_KEY: ${{ secrets.API_KEY }}
