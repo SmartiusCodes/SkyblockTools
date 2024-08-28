@@ -1,0 +1,4 @@
+name: get-key
+on: push
+env:
+  API_KEY: ${{ secrets.API_KEY }}
