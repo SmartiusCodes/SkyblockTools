@@ -1,3 +1,6 @@
+//////////////////////
+//FIX IGNORE HELMETS//
+//////////////////////
 setInterval(getData, 600000);
 
 function tips() {

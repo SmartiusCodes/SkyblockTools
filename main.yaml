@@ -1,8 +1,0 @@
-name: get-key
-on: push
-jobs:
-  my-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: my-step
-        run: sh setEnvironment.sh ${{ secrets.API_KEY }}
