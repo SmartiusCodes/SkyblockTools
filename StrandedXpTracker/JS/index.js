@@ -24,7 +24,12 @@ async function getProfiles() {
 
     profileId = [];
 
-    let uuid = await fetch(`https://api.mojang.com/users/profiles/minecraft/${username}`);
+    let uuid = await fetch(`https://api.mojang.com/users/profiles/minecraft/${username}`, {
+        mode: 'cors',
+        headers: {
+            'Access-Control-Allow-Origin': '*'
+        }
+    });
     jsonData = await uuid.json();
     if (jsonData.id == undefined) {
         alert("Unknown name");
