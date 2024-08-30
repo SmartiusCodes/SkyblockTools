@@ -97,9 +97,9 @@ function toggleDiv(divId) {
 
 //Toggle all divs in selected task display
 //Variables
-let whatToToggle;
-
 let coreTasksDivs = ["skillsDiv", "accessoryBagDiv", "petScoreDiv", "collectionDiv", "minionDiv", "bankDiv"];
+
+let whatToToggle = coreTasksDivs;
 
 function toggleAllDivs(selectedDisplay) {
     if (selectedDisplay == "coreTasks") { whatToToggle = coreTasksDivs; }
