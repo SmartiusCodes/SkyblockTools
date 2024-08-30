@@ -6,7 +6,8 @@ let coreTasks = document.getElementById("coreTasks");
 //div swapping
 let currentlyDisplayedDiv = coreTasks;
 
-let profileData;
+let profileData = [];
+let uuidOfUsername;
 let apiRequests = 0;
 let apiLimit = 100;
 
@@ -24,17 +25,12 @@ async function getProfiles() {
 
     profileId = [];
 
-    let uuid = await fetch(`https://api.mojang.com/users/profiles/minecraft/${username}`, {
-        mode: 'no-cors',
-        headers: {
-            'Access-Control-Allow-Origin': '*'
-        }
-    });
+    let uuid = await fetch(`https://api.ashcon.app/mojang/v2/user/${username}`);
     jsonData = await uuid.json();
-    if (jsonData.id == undefined) {
+    if (jsonData.uuid == undefined) {
         alert("Unknown name");
     } else if (apiRequests < apiLimit) {
-        uuid = jsonData.id;
+        uuid = jsonData.uuid;
         let profiles = await fetch(`https://api.hypixel.net/v2/skyblock/profiles?key=${localStorage.getItem("KEY")}&uuid=${uuid}`);
         let profilesData = await profiles.json();
         if (!profilesData.success) { alert(profilesData.cause); }
@@ -43,7 +39,7 @@ async function getProfiles() {
             if (profilesData.profiles[i].game_mode == "island") {
                 if (apiRequests < apiLimit) {
                     let profileName = profilesData.profiles[i].cute_name;
-                    let profileData = await fetch(`https://api.hypixel.net/v2/skyblock/profile?key=${localStorage.getItem(KEY)}&profile=${profilesData.profiles[i].profile_id}`);
+                    let profileData = await fetch(`https://api.hypixel.net/v2/skyblock/profile?key=${localStorage.getItem("KEY")}&profile=${profilesData.profiles[i].profile_id}`);
                     apiRequests++;
                     jsonData = await profileData.json();
                     profileId.push(profileName);
@@ -54,7 +50,11 @@ async function getProfiles() {
                 }
             }
         }
+        while (uuid.includes("-")) {
+           uuid = uuid.replace("-", "");
+        }
         uuidOfUsername = uuid;
+
         //Remove options from profile picker if any are there
         for (const option of document.querySelectorAll('#profiles > option')) {
             option.remove();
@@ -62,12 +62,12 @@ async function getProfiles() {
 
         //Add profiles if they are stranded
         profileData = [];
-        for (let i = 0; i < profiles?.length; i += 2) {
+        for (let i = 0; i < profileId?.length; i += 2) {
             let option = document.createElement("option");
-            option.text = profiles[i];
+            option.text = profileId[i];
             option.value = i / 2;
             profilesDropdown.add(option);
-            profileData.push(profiles[i + 1]);
+            profileData.push(profileId[i + 1]);
         }
     } else {
         alert("API Limit Reached!");
@@ -124,5 +124,5 @@ function toggleAllDivsBeforeSwappingTaskDisplay() {
 
 function showData() {
     let data = profileData[profilesDropdown.value].profile;
-    showCoreTaskXp(data, uuid);
+    getCoreTaskXp(data, uuidOfUsername);
 }

@@ -89,6 +89,10 @@ function getCoreTaskXp(data, uuidOfUsername) {
     }
     maxCoreTasksXp += maxXpFromMinions;
 
+    /////////////////////////////////////////
+    /////////////////////////////////////////
+    /////////////////////////////////////////
+
     for (let bankUpgrades in constants.bank_upgrades) {
         maxXpFromBankUpgrades += constants.bank_upgrades[bankUpgrades];
     }
@@ -126,6 +130,9 @@ function getCoreTaskXp(data, uuidOfUsername) {
 
             for (let key in constants.leveling_xp) {
                 if (constants.leveling_xp[key] <= currentXp && skillLevel < maxLevel[skill]) {
+                    if (skill == "taming" && key > 50 + sacrificedPetsAmount) {
+                        break;
+                    }
                     currentXp -= constants.leveling_xp[key];
 
                     if (key <= 10) { skillsXp += 5 }
@@ -229,7 +236,7 @@ function getCoreTaskXp(data, uuidOfUsername) {
     //Bank Upgrade
     let bankUpgradesXp = 0;
     for (let completed_tasks in data.members[uuidOfUsername].leveling.completed_tasks) {
-        if (data.members[uuidOfUsername].leveling.completed_tasks[completed_tasks] == "BANK_UPGRADE_GOLD") { bankUpgradesXp += 10; }
+        if (data.members[uuidOfUsername].leveling.completed_tasks[completed_tasks] == "BANK_UPGRADE_GOLD") { bankUpgradesXp += 20; }
     }
 
     currentCoreTasksXp += bankUpgradesXp;
@@ -240,6 +247,7 @@ function getCoreTaskXp(data, uuidOfUsername) {
     //let coreTasksString = "You have " + currentCoreTasksXp + " XP in Core Tasks out of " + maxCoreTasksXp + " available!";
 
     coreTasksDisplay.innerHTML = "Core Tasks (" + (currentCoreTasksXp / maxCoreTasksXp * 100).toFixed(2) + "% Done)";
+
     //Skills Display
     skillsDisplay.innerHTML = skillsString;
 
@@ -257,4 +265,9 @@ function getCoreTaskXp(data, uuidOfUsername) {
 
     //Bank Display
     bankUpgradesDisplay.innerHTML = bankUpgradesString;
+
+    //Run event tasks
+
+    //getEventTask(data, uuidOfUsername);
+
 }
