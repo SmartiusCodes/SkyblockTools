@@ -1,9 +1,19 @@
 let usernameInput = document.getElementById("usernameInput");
 let profilesDropdown = document.getElementById("profiles");
 
+let coreTasks = document.getElementById("coreTasks");
+
+//div swapping
+let currentlyDisplayedDiv = coreTasks;
+
 let profileData;
 let apiRequests = 0;
 let apiLimit = 100;
+
+function saveKey() {
+    localStorage.setItem("KEY", document.getElementById("apiKey").value);
+    alert("Personal API Key set");
+}
 
 setInterval(function () { apiRequests = 0 }, 300000);
 
@@ -20,9 +30,7 @@ async function getProfiles() {
         alert("Unknown name");
     } else if (apiRequests < apiLimit) {
         uuid = jsonData.id;
-        let profiles = await fetch(`https://api.hypixel.net/v2/skyblock/profiles?key=${API_KEY}&uuid=${uuid}`, {
-            mode: 'cors'
-        });
+        let profiles = await fetch(`https://api.hypixel.net/v2/skyblock/profiles?key=${localStorage.getItem("KEY")}&uuid=${uuid}`);
         let profilesData = await profiles.json();
         if (!profilesData.success) { alert(profilesData.cause); }
         apiRequests++;
@@ -30,7 +38,7 @@ async function getProfiles() {
             if (profilesData.profiles[i].game_mode == "island") {
                 if (apiRequests < apiLimit) {
                     let profileName = profilesData.profiles[i].cute_name;
-                    let profileData = await fetch(`https://api.hypixel.net/v2/skyblock/profile?key=${API_KEY}&profile=${profilesData.profiles[i].profile_id}`);
+                    let profileData = await fetch(`https://api.hypixel.net/v2/skyblock/profile?key=${localStorage.getItem(KEY)}&profile=${profilesData.profiles[i].profile_id}`);
                     apiRequests++;
                     jsonData = await profileData.json();
                     profileId.push(profileName);
@@ -62,10 +70,14 @@ async function getProfiles() {
     console.log("Currently [apiRequests] is at: " + apiRequests);
 }
 
+//Toggle between displayed tasks
+let swappedTaskDisplayed = true;
 function swapDivXPTasks(divName) {
+    toggleAllDivsBeforeSwappingTaskDisplay();
     currentlyDisplayedDiv.style.display = "none";
     document.getElementById(divName).style.display = "block";
     currentlyDisplayedDiv = document.getElementById(divName);
+    swappedTaskDisplayed = true;
 }
 
 //Toggle different xp methods within the main tasks
@@ -77,6 +89,34 @@ function toggleDiv(divId) {
         x.style.display = "none";
     }
 }
+
+//Toggle all divs in selected task display
+//Variables
+let whatToToggle;
+
+let coreTasksDivs = ["skillsDiv", "accessoryBagDiv", "petScoreDiv", "collectionDiv", "minionDiv", "bankDiv"];
+
+function toggleAllDivs(selectedDisplay) {
+    if (selectedDisplay == "coreTasks") { whatToToggle = coreTasksDivs; }
+
+    if (swappedTaskDisplayed) {
+        for (const element of whatToToggle) {
+            document.getElementById(element).style.display = "block";
+        }
+        swappedTaskDisplayed = false;
+    } else {
+        for (const element of whatToToggle) {
+            document.getElementById(element).style.display = "none";
+        }
+        swappedTaskDisplayed = true;
+    }
+}
+function toggleAllDivsBeforeSwappingTaskDisplay() {
+    for (const element of whatToToggle) {
+        document.getElementById(element).style.display = "none";
+    }
+}
+
 function showData() {
     let data = profileData[profilesDropdown.value].profile;
     showCoreTaskXp(data, uuid);

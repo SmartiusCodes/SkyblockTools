@@ -9,6 +9,8 @@
 
 <body>
     <h3>Stranded XP Tracker</h3>
+    API Key: <input type="password" id="apiKey">
+    <button onclick="saveKey()">Save Key</button>
     <hr>
 
     <input id="usernameInput" placeholder="Username">
@@ -29,6 +31,7 @@
 
     <div id="coreTasks">
         <h3 id="coreTasksPercentage">Core Tasks:</h3>
+        <button onclick='toggleAllDivs("coreTasks")'>Toggle All</button>
 
         <h4>Skill Level Up</h4>
         <button onclick='toggleDiv("skillsDiv")'>Show/Hide Skill Level Up</button>
@@ -65,7 +68,7 @@
         <div style="display: none;" id="bankDiv">
             <p id="bankUpgrades">Nothing Loaded</p>
         </div>
-        
+
     </div>
 
     <div id="eventTasks" style="display: none;">

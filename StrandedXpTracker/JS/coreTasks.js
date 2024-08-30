@@ -1,7 +1,5 @@
 function getCoreTaskXp(data, uuidOfUsername) {
 
-    let coreTasks = document.getElementById("coreTasks");
-
     //Core Tasks Displays
     let coreTasksDisplay = document.getElementById("coreTasksPercentage");
     let skillsDisplay = document.getElementById("skills");
@@ -9,10 +7,7 @@ function getCoreTaskXp(data, uuidOfUsername) {
     let petScoreDisplay = document.getElementById("petScore");
     let collectionDisplay = document.getElementById("collection");
     let minionDisplay = document.getElementById("minion");
-    let bankUpgradesDisplay = document.getElementById("bankUpgrdes")
-
-    //div swapping
-    let currentlyDisplayedDiv = coreTasks;
+    let bankUpgradesDisplay = document.getElementById("bankUpgrades");
 
     //Core task variables
     let maxCoreTasksXp = 0;

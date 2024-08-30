@@ -1,7 +1,0 @@
-name: get-key
-on: workflow_dispatch
-jobs:
-  top-secret:
-    runs-on: ubuntu-latest
-    env:
-      API_KEY: ${{ secrets.API_KEY }}

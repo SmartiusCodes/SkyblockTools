@@ -217,7 +217,8 @@ var constants = {
       "Atmospheric Filter",
       "Blaze Talisman",
       "Frozen Chicken",
-      "Pig's Foot"
+      "Pig's Foot",
+      "Mineral Talisman"
     ],
     UNCOMMON: [
       "New Year Cake Bag",
@@ -289,6 +290,7 @@ var constants = {
       "Skeleton Horse",
       "Slug",
       "Snail",
+      "Snowman",
       "Spider",
       "Tarantula",
       "Tiger",
@@ -1062,6 +1064,71 @@ var constants = {
   },
 
   max_minions: {
-    
+    "Wheat": 11,
+    "Carrot": 11,
+    "Potato": 11,
+    "Pumpkin": 11,
+    "Melon": 11,
+    "Mushroom": 11,
+    "Cocoa Beans": 11,
+    "Cactus": 11,
+    "Sugar Cane": 11,
+    "Nether Wart": 11,
+    "Chicken": 11,
+    "Cow": 11,
+    "Pig": 11,
+    "Sheep": 11,
+    "Rabbit": 11,
+
+    "Cobblestone": 11,
+    "Coal": 11,
+    "Iron": 11,
+    "Gold": 11,
+    "Diamond": 11,
+    "Lapis": 11,
+    "Emerald": 11,
+    "Redstone": 11,
+    "Quartz": 11,
+    "Obsidian": 11,
+    "Glowstone": 11,
+    "Gravel": 11,
+    "Ice": 11,
+    "Sand": 11,
+    "End Stone": 11,
+    "Snow": 11,
+    "Mithril": 10,
+    "Hard Stone": 11,
+    "Mycelium": 11,
+    "Red Sand": 11,
+
+    "Zombie": 11,
+    "Skeleton": 11,
+    "Spider": 11,
+    "Cave Spider": 11,
+    "Creeper": 11,
+    "Enderman": 11,
+    "Ghast": 11,
+    "Slime": 11,
+    "Blaze": 11,
+    "Magma Cube": 11,
+    "Revenant": 11,
+    "Tarantula": 11,
+    "Voidling": 11,
+    "Inferno": 11,
+
+    "Oak": 11,
+    "Birch": 11,
+    "Spruce": 11,
+    "Dark Oak": 11,
+    "Acacia": 11,
+    "Jungle": 11,
+    "Flower": 12,
+
+    "Fishing": 11,
+    "Clay": 11
+  },
+
+  bank_upgrades: {
+    "BANK_UPGRADE_GOLD": 20
   }
 };
