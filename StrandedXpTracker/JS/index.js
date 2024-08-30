@@ -25,7 +25,7 @@ async function getProfiles() {
     profileId = [];
 
     let uuid = await fetch(`https://api.mojang.com/users/profiles/minecraft/${username}`, {
-        mode: 'cors',
+        mode: 'no-cors',
         headers: {
             'Access-Control-Allow-Origin': '*'
         }
