@@ -12,8 +12,12 @@ let apiRequests = 0;
 let apiLimit = 100;
 
 function saveKey() {
-    localStorage.setItem("KEY", document.getElementById("apiKey").value);
-    alert("Personal API Key set");
+    if (document.getElementById("apiKey").value == "") {
+        alert("Input a API key first!");
+    } else {
+        localStorage.setItem("KEY", document.getElementById("apiKey").value);
+        alert("Personal API Key set");
+    }
 }
 
 setInterval(function () { apiRequests = 0 }, 300000);
@@ -33,7 +37,10 @@ async function getProfiles() {
         uuid = jsonData.uuid;
         let profiles = await fetch(`https://api.hypixel.net/v2/skyblock/profiles?key=${localStorage.getItem("KEY")}&uuid=${uuid}`);
         let profilesData = await profiles.json();
-        if (!profilesData.success) { alert(profilesData.cause); }
+        if (!profilesData.success) {
+            if (profilesData.cause == "Invalid API key") { alert("Inputted API key is invalid!\nGo to https://developer.hypixel.net and get a new one!"); }
+            else { alert(profilesData.cause); }
+        }
         apiRequests++;
         for (let i = 0; i < profilesData.profiles.length; i++) {
             if (profilesData.profiles[i].game_mode == "island") {
@@ -51,7 +58,7 @@ async function getProfiles() {
             }
         }
         while (uuid.includes("-")) {
-           uuid = uuid.replace("-", "");
+            uuid = uuid.replace("-", "");
         }
         uuidOfUsername = uuid;
 
