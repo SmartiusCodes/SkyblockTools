@@ -129,7 +129,13 @@ function toggleAllDivsBeforeSwappingTaskDisplay() {
     }
 }
 
+//Display Details
+getCoreTasksDetails("accessories", "COMMON");
+
 function showData() {
     let data = profileData[profilesDropdown.value].profile;
-    getCoreTaskXp(data, uuidOfUsername);
+    //Core Tasks
+    getCoreTask(data, uuidOfUsername);
+    //Event Tasks
+    //getEventTask(data, uuidOfUsername);
 }

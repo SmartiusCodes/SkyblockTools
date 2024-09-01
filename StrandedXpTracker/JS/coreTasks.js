@@ -1,4 +1,4 @@
-function getCoreTaskXp(data, uuidOfUsername) {
+function getCoreTask(data, uuidOfUsername) {
 
     //Core Tasks Displays
     let coreTasksDisplay = document.getElementById("coreTasksPercentage");
@@ -156,19 +156,21 @@ function getCoreTaskXp(data, uuidOfUsername) {
 
     skillsString += "<br />You have " + skillsXp + " XP in Skills out of " + maxXpFromSkills + " available!";
 
+    skillsDisplay.innerHTML = skillsString;
+
     //Accessory Bag
     let magicalPower = data.members[uuidOfUsername].accessory_bag_storage.highest_magical_power;
 
     currentCoreTasksXp += magicalPower;
 
-    let accessoryBagString = "You have " + magicalPower + " out of " + maxXpFromAccessories + " Magical Power!<br /><br />Each Magical Power gives 1 Skyblock XP!";
+    accessoryBagDisplay.innerHTML = "You have " + magicalPower + " out of " + maxXpFromAccessories + " Magical Power!<br /><br />Each Magical Power gives 1 Skyblock XP!";
 
     //Pet Score
     let petScore = data.members[uuidOfUsername].leveling.highest_pet_score;
 
     currentCoreTasksXp += petScore * 3;
 
-    let petScoreString = "You have " + petScore + " out of " + maxXpFromPetScore + " Pet Score!<br /><br />Each Pet Score gives 3 Skyblock XP!";
+    petScoreDisplay.innerHTML = "You have " + petScore + " out of " + maxXpFromPetScore + " Pet Score!<br /><br />Each Pet Score gives 3 Skyblock XP!";
 
     //Collections
     let collections;
@@ -193,7 +195,7 @@ function getCoreTaskXp(data, uuidOfUsername) {
 
     currentCoreTasksXp += amountOfCollections * 4;
 
-    let collectionString = "You have " + amountOfCollections + " out of " + maxXpFromCollections / 4 + " Collections done!<br /><br />Each Collection gives 4 Skyblock XP!";
+    collectionDisplay.innerHTML = "You have " + amountOfCollections + " out of " + maxXpFromCollections / 4 + " Collections done!<br /><br />Each Collection gives 4 Skyblock XP!";
 
     //Minions
     let minions;
@@ -231,7 +233,7 @@ function getCoreTaskXp(data, uuidOfUsername) {
 
     currentCoreTasksXp += minionXp;
 
-    let minionString = "You have " + minionXp + " XP in Minions out of " + maxXpFromMinions + " available!";
+    minionDisplay.innerHTML = "You have " + minionXp + " XP in Minions out of " + maxXpFromMinions + " available!";
 
     //Bank Upgrade
     let bankUpgradesXp = 0;
@@ -241,33 +243,10 @@ function getCoreTaskXp(data, uuidOfUsername) {
 
     currentCoreTasksXp += bankUpgradesXp;
 
-    let bankUpgradesString = "You have " + bankUpgradesXp + " XP in Bank Upgrades out of " + maxXpFromBankUpgrades + " available!";
+    bankUpgradesDisplay.innerHTML = "You have " + bankUpgradesXp + " XP in Bank Upgrades out of " + maxXpFromBankUpgrades + " available!";
 
     //CurrentXp out of TotalXp for Core Tasks
     //let coreTasksString = "You have " + currentCoreTasksXp + " XP in Core Tasks out of " + maxCoreTasksXp + " available!";
 
     coreTasksDisplay.innerHTML = "Core Tasks (" + (currentCoreTasksXp / maxCoreTasksXp * 100).toFixed(2) + "% Done)";
-
-    //Skills Display
-    skillsDisplay.innerHTML = skillsString;
-
-    //Accessory Bag Display
-    accessoryBagDisplay.innerHTML = accessoryBagString;
-
-    //Pet Score Display
-    petScoreDisplay.innerHTML = petScoreString;
-
-    //Collection Display
-    collectionDisplay.innerHTML = collectionString;
-
-    //Minion Display
-    minionDisplay.innerHTML = minionString;
-
-    //Bank Display
-    bankUpgradesDisplay.innerHTML = bankUpgradesString;
-
-    //Run event tasks
-
-    //getEventTask(data, uuidOfUsername);
-
 }

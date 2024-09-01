@@ -29,48 +29,67 @@
     <button onclick='swapDivXPTasks("skillRelatedTasks")'>Skill Related Tasks</button>
     <button onclick='swapDivXPTasks("miscellaneousTasks")'>Miscellaneous Tasks</button>
     <button onclick='swapDivXPTasks("storyTasks")'>Story Tasks</button>
-    <hr>
+    <br><br>
 
-    <div id="coreTasks">
+    <div style="border: 2px solid black;" id="coreTasks">
         <h3 id="coreTasksPercentage">Core Tasks:</h3>
         <button onclick='toggleAllDivs("coreTasks")'>Toggle All</button>
 
         <h4>Skill Level Up</h4>
-        <button onclick='toggleDiv("skillsDiv")'>Show/Hide Skill Level Up</button>
+        <button onclick='toggleDiv("skillsDiv")'>Toggle Skill Level Up</button>
         <div style="display: none;" id="skillsDiv">
             <p id="skills">Nothing Loaded</p>
         </div>
+        <hr>
 
         <h4>Accessory Bag</h4>
-        <button onclick='toggleDiv("accessoryBagDiv")'>Show/Hide Accessory Bag</button>
+        <button onclick='toggleDiv("accessoryBagDiv")'>Toggle Accessory Bag</button>
         <div style="display: none;" id="accessoryBagDiv">
             <p id="accessoryBag">Nothing Loaded</p>
+            <button onclick='toggleDiv("accessoryBagDetailsDiv")'>Toggle Obtainable Accessories</button>
+            <br>
+            <div style="display: none;" id="accessoryBagDetailsDiv">
+                <br>Rarities:<br>
+                <button onclick="getCoreTasksDetails('accessories', 'COMMON')">Common</button>
+                <button onclick="getCoreTasksDetails('accessories', 'UNCOMMON')">Uncommon</button>
+                <button onclick="getCoreTasksDetails('accessories', 'RARE')">Rare</button>
+                <button onclick="getCoreTasksDetails('accessories', 'EPIC')">Epic</button>
+                <button onclick="getCoreTasksDetails('accessories', 'LEGENDARY')">Legendary</button>
+                <button onclick="getCoreTasksDetails('accessories', 'SPECIAL')">Special</button>
+                <br>
+                <p id="accessoryBagDetails"></p>
+            </div>
+            <br>
         </div>
+        <hr>
 
         <h4>Pet Score</h4>
-        <button onclick='toggleDiv("petScoreDiv")'>Show/Hide Pet Score</button>
+        <button onclick='toggleDiv("petScoreDiv")'>Toggle Pet Score</button>
         <div style="display: none;" id="petScoreDiv">
             <p id="petScore">Nothing Loaded</p>
         </div>
+        <hr>
 
         <h4>Collection</h4>
-        <button onclick='toggleDiv("collectionDiv")'>Show/Hide Collection</button>
+        <button onclick='toggleDiv("collectionDiv")'>Toggle Collection</button>
         <div style="display: none;" id="collectionDiv">
             <p id="collection">Nothing Loaded</p>
         </div>
+        <hr>
 
         <h4>Minion</h4>
-        <button onclick='toggleDiv("minionDiv")'>Show/Hide Minion</button>
+        <button onclick='toggleDiv("minionDiv")'>Toggle Minion</button>
         <div style="display: none;" id="minionDiv">
             <p id="minion">Nothing Loaded</p>
         </div>
+        <hr>
 
         <h4>Bank Upgrades</h4>
-        <button onclick='toggleDiv("bankDiv")'>Show/Hide Minion</button>
+        <button onclick='toggleDiv("bankDiv")'>Toggle Minion</button>
         <div style="display: none;" id="bankDiv">
             <p id="bankUpgrades">Nothing Loaded</p>
         </div>
-
+        <br><br>
     </div>
 
     <div id="eventTasks" style="display: none;">
@@ -97,6 +116,7 @@
 <script src="https://cdn.socket.io/socket.io-3.0.0.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="JS/Data/Constants.js"></script>
+<script src="JS/CoreTasksDetails.js"></script>
 <script src="JS/coreTasks.js"></script>
 <script src="JS/index.js"></script>
 

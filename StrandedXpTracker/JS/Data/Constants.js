@@ -217,8 +217,7 @@ var constants = {
       "Atmospheric Filter",
       "Blaze Talisman",
       "Frozen Chicken",
-      "Pig's Foot",
-      "Mineral Talisman"
+      "Pig's Foot"
     ],
     UNCOMMON: [
       "New Year Cake Bag",
