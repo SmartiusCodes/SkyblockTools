@@ -72,19 +72,21 @@ function getCoreTask(data, uuidOfUsername) {
     maxCoreTasksXp += maxXpFromCollections;
 
     //Max xp from minions
-    for (let minion in constants.max_minions) {
-        for (let i = 1; i <= constants.max_minions[minion]; i++) {
-            if (minion != "Cobblestone") {
-                if (i < 7) { maxXpFromMinions += 1; }
-            } else if (i != 1) {
-                if (i < 7) { maxXpFromMinions += 1; }
+    for (let type in constants.max_minions) {
+        for (let minion in constants.max_minions[type]) {
+            for (let i = 1; i <= constants.max_minions[type][minion]; i++) {
+                if (minion != "Cobblestone") {
+                    if (i < 7) { maxXpFromMinions += 1; }
+                } else if (i != 1) {
+                    if (i < 7) { maxXpFromMinions += 1; }
+                }
+                if (i == 7) { maxXpFromMinions += 2; }
+                if (i == 8) { maxXpFromMinions += 3; }
+                if (i == 9) { maxXpFromMinions += 4; }
+                if (i == 10) { maxXpFromMinions += 6; }
+                if (i == 11) { maxXpFromMinions += 12; }
+                if (i == 12) { maxXpFromMinions += 24; }
             }
-            if (i == 7) { maxXpFromMinions += 2; }
-            if (i == 8) { maxXpFromMinions += 3; }
-            if (i == 9) { maxXpFromMinions += 4; }
-            if (i == 10) { maxXpFromMinions += 6; }
-            if (i == 11) { maxXpFromMinions += 12; }
-            if (i == 12) { maxXpFromMinions += 24; }
         }
     }
     maxCoreTasksXp += maxXpFromMinions;

@@ -1,48 +1,29 @@
 let accessoryBagDisplay = document.getElementById("accessoryBagDetails");
+let petsDisplay = document.getElementById("petsDetails");
+let minionsDisplay = document.getElementById("minionsDetails");
 
 function getCoreTasksDetails(task, whatToShow) {
+    //Accessories
     if (task == "accessories") {
-        if (whatToShow == "COMMON") {
-            let accessoryBagDisplayString = "";
-            for (let key in constants.max_magical_power[whatToShow]) {
-                    accessoryBagDisplayString += constants.max_magical_power[whatToShow][key] + "<br />";
-            }
-            accessoryBagDisplay.innerHTML = accessoryBagDisplayString;
+        let accessoryBagDisplayString = "";
+        for (let key in constants.max_magical_power[whatToShow]) {
+            accessoryBagDisplayString += constants.max_magical_power[whatToShow][key] + "<br />";
         }
-        if (whatToShow == "UNCOMMON") {
-            let accessoryBagDisplayString = "";
-            for (let key in constants.max_magical_power[whatToShow]) {
-                    accessoryBagDisplayString += constants.max_magical_power[whatToShow][key] + "<br />";
-            }
-            accessoryBagDisplay.innerHTML = accessoryBagDisplayString;
+        accessoryBagDisplay.innerHTML = accessoryBagDisplayString;
+    }
+    //Pets
+    if (task == "pets") {
+        let petsDisplayString = "";
+        for (let key in constants.max_pet_score[whatToShow]) {
+            petsDisplayString += constants.max_pet_score[whatToShow][key] + "<br />";
         }
-        if (whatToShow == "RARE") {
-            let accessoryBagDisplayString = "";
-            for (let key in constants.max_magical_power[whatToShow]) {
-                    accessoryBagDisplayString += constants.max_magical_power[whatToShow][key] + "<br />";
-            }
-            accessoryBagDisplay.innerHTML = accessoryBagDisplayString;
+        petsDisplay.innerHTML = petsDisplayString;
+    }
+    if (task == "minions") {
+        let minionsDisplayString = "";
+        for (let minion in constants.max_minions[whatToShow]) {
+            minionsDisplayString += minion + ": " + constants.max_minions[whatToShow][minion] + "<br />";
         }
-        if (whatToShow == "EPIC") {
-            let accessoryBagDisplayString = "";
-            for (let key in constants.max_magical_power[whatToShow]) {
-                    accessoryBagDisplayString += constants.max_magical_power[whatToShow][key] + "<br />";
-            }
-            accessoryBagDisplay.innerHTML = accessoryBagDisplayString;
-        }
-        if (whatToShow == "LEGENDARY") {
-            let accessoryBagDisplayString = "";
-            for (let key in constants.max_magical_power[whatToShow]) {
-                    accessoryBagDisplayString += constants.max_magical_power[whatToShow][key] + "<br />";
-            }
-            accessoryBagDisplay.innerHTML = accessoryBagDisplayString;
-        }
-        if (whatToShow == "SPECIAL") {
-            let accessoryBagDisplayString = "";
-            for (let key in constants.max_magical_power[whatToShow]) {
-                    accessoryBagDisplayString += constants.max_magical_power[whatToShow][key] + "<br />";
-            }
-            accessoryBagDisplay.innerHTML = accessoryBagDisplayString;
-        }
+        minionsDisplay.innerHTML = minionsDisplayString;
     }
 }

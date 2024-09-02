@@ -131,6 +131,8 @@ function toggleAllDivsBeforeSwappingTaskDisplay() {
 
 //Display Details
 getCoreTasksDetails("accessories", "COMMON");
+getCoreTasksDetails("pets", "EPIC");
+getCoreTasksDetails("minions", "FARMING");
 
 function showData() {
     let data = profileData[profilesDropdown.value].profile;
