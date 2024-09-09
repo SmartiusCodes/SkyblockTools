@@ -40,121 +40,118 @@
             <h4>Skill Level Up</h4>
             <button onclick='toggleDiv("skillsDiv")'>Toggle Skill Level Up</button>
             <div style="display: none;" id="skillsDiv">
-                <p id="skills">Nothing Loaded</p>
+                <p id="skills"></p>
             </div>
             <hr>
 
             <h4>Accessory Bag</h4>
             <button onclick='toggleDiv("accessoryBagDiv")'>Toggle Accessory Bag</button>
+            <button disabled id="accessoriesBtn"
+                onclick='getCoreTasksDetails("accessories", profileData[profilesDropdown.value].profile, uuidOfUsername)'>Show
+                Missing</button>
+            <p id="accessoryBagDisplay"></p>
             <div style="display: none;" id="accessoryBagDiv">
-                <p id="accessoryBag">Nothing Loaded</p>
-                <button onclick='toggleDiv("accessoryBagDetailsDiv")'>Toggle Obtainable Accessories</button>
-                <br>
-                <div style="display: none;" id="accessoryBagDetailsDiv">
-                    <br>Rarities:<br>
-                    <button onclick="getCoreTasksDetails('accessories', 'COMMON')">Common</button>
-                    <button onclick="getCoreTasksDetails('accessories', 'UNCOMMON')">Uncommon</button>
-                    <button onclick="getCoreTasksDetails('accessories', 'RARE')">Rare</button>
-                    <button onclick="getCoreTasksDetails('accessories', 'EPIC')">Epic</button>
-                    <button onclick="getCoreTasksDetails('accessories', 'LEGENDARY')">Legendary</button>
-                    <button onclick="getCoreTasksDetails('accessories', 'SPECIAL')">Special</button>
-                    <br>
-                    <p id="accessoryBagDetails"></p>
-                </div>
+                <p id="accessoryBagCommon" style="color: #ffffff;"></p>&nbsp&nbsp
+                <p id="accessoryBagUncommon" style="color: #55FF55;"></p>&nbsp&nbsp
+                <p id="accessoryBagRare" style="color: #5555FF;"></p>&nbsp&nbsp
+                <p id="accessoryBagEpic" style="color: #AA00AA;"></p>&nbsp&nbsp
+                <p id="accessoryBagLegendary" style="color: #FFAA00;"></p>&nbsp&nbsp
+                <p id="accessoryBagSpecial" style="color: #FF5555;"></p>
                 <br>
             </div>
             <hr>
 
             <h4>Pet Score</h4>
-            <button onclick='toggleDiv("petScoreDiv")'>Toggle Pet Score</button>
+            <button onclick='toggleDiv("petScoreDiv")'>Toggle Pets</button>
+            <button disabled id="petsBtn" onclick='getCoreTasksDetails("pets", profileData[profilesDropdown.value].profile, uuidOfUsername)'>ShowMissing</button>
+            <p id="petScoreDisplay"></p>
             <div style="display: none;" id="petScoreDiv">
-                <p id="petScore">Nothing Loaded</p>
-                <button onclick="toggleDiv('petScoreDetailsDiv')">Toggle Obtainable Pets</button>
+                <p id="petCommon" style="color: #ffffff;"></p>&nbsp&nbsp
+                <p id="petUncommon" style="color: #55FF55;"></p>&nbsp&nbsp
+                <p id="petRare" style="color: #5555FF;"></p>&nbsp&nbsp
+                <p id="petEpic" style="color: #AA00AA;"></p>&nbsp&nbsp
+                <p id="petLegendary" style="color: #FFAA00;"></p>&nbsp&nbsp
+                <p id="petMythic" style="color: #FF55FF;"></p>
                 <br>
-                <div style="display: none;" id="petScoreDetailsDiv">
-                    <br>Rarities:<br>
-                    <button onclick="getCoreTasksDetails('pets', 'EPIC')">Epic</button>
-                    <button onclick="getCoreTasksDetails('pets', 'LEGENDARY')">Legendary</button>
-                    <button onclick="getCoreTasksDetails('pets', 'MYTHIC')">Mythic</button>
-                    <br>
-                    <p id="petsDetails"></p>
-                </div>
             </div>
-            <hr>
+        </div>
+        <hr>
 
-            <h4>Collection</h4>
-            <button onclick='toggleDiv("collectionDiv")'>Toggle Collection</button>
-            <div style="display: none;" id="collectionDiv">
-                <p id="collection">Nothing Loaded</p>
-                <button onclick="toggleDiv('collectionDetailsDiv')">Toggle Unobtainable Collections</button>
+        <h4>Collection</h4>
+        <button onclick='toggleDiv("collectionDiv")'>Toggle Collection</button>
+        <div style="display: none;" id="collectionDiv">
+            <p id="collection"></p>
+            <button onclick="toggleDiv('collectionDetailsDiv')">Toggle Unobtainable Collections</button>
+            <br>
+            <div style="display: none;" id="collectionDetailsDiv">
+                <br>Unobtainable Collections:<br>
                 <br>
-                <div style="display: none;" id="collectionDetailsDiv">
-                    <br>Unobtainable Collections:<br>
-                    <br>
-                    Glacite<br>
-                    Tungsten<br>
-                    Umber<br>
-                    All Rift Collections<br>
-                </div>
+                Glacite<br>
+                Tungsten<br>
+                Umber<br>
+                All Rift Collections<br>
             </div>
-            <hr>
+        </div>
+        <hr>
 
-            <h4>Minion</h4>
-            <button onclick='toggleDiv("minionDiv")'>Toggle Minion</button>
-            <div style="display: none;" id="minionDiv">
-                <p id="minion">Nothing Loaded</p>
-                <button onclick="toggleDiv('minionDetailsDiv')">Toggle Obtainable Minions</button>
+        <h4>Minion</h4>
+        <button onclick='toggleDiv("minionDiv")'>Toggle Minion</button>
+        <div style="display: none;" id="minionDiv">
+            <p id="minion"></p>
+            <button onclick="toggleDiv('minionDetailsDiv')">Toggle Obtainable Minions</button>
+            <br>
+            <div style="display: none;" id="minionDetailsDiv">
+                <br>Minion Types:<br>
+                <button onclick="getCoreTasksDetails('minions', 'FARMING')">Farming</button>
+                <button onclick="getCoreTasksDetails('minions', 'MINING')">Mining</button>
+                <button onclick="getCoreTasksDetails('minions', 'COMBAT')">Combat</button>
+                <button onclick="getCoreTasksDetails('minions', 'FORAGING')">Foraging</button>
+                <button onclick="getCoreTasksDetails('minions', 'FISHING')">Fishing</button>
                 <br>
-                <div style="display: none;" id="minionDetailsDiv">
-                    <br>Minion Types:<br>
-                    <button onclick="getCoreTasksDetails('minions', 'FARMING')">Farming</button>
-                    <button onclick="getCoreTasksDetails('minions', 'MINING')">Mining</button>
-                    <button onclick="getCoreTasksDetails('minions', 'COMBAT')">Combat</button>
-                    <button onclick="getCoreTasksDetails('minions', 'FORAGING')">Foraging</button>
-                    <button onclick="getCoreTasksDetails('minions', 'FISHING')">Fishing</button>
-                    <br>
-                    <p id="minionsDetails"></p>
-                </div>
+                <p id="minionsDetails"></p>
             </div>
-            <hr>
+        </div>
+        <hr>
 
-            <h4>Bank Upgrades</h4>
-            <button onclick='toggleDiv("bankDiv")'>Toggle Minion</button>
-            <div style="display: none;" id="bankDiv">
-                <p id="bankUpgrades">Nothing Loaded</p>
-                <button onclick="toggleDiv('bankDetailsDiv')">Toggle Obtainable Bank Upgrades</button>
+        <h4>Bank Upgrades</h4>
+        <button onclick='toggleDiv("bankDiv")'>Toggle Minion</button>
+        <div style="display: none;" id="bankDiv">
+            <p id="bankUpgrades"></p>
+            <button onclick="toggleDiv('bankDetailsDiv')">Toggle Obtainable Bank Upgrades</button>
+            <br>
+            <div style="display: none;" id="bankDetailsDiv">
+                <br>Bank Upgrades:<br>
                 <br>
-                <div style="display: none;" id="bankDetailsDiv">
-                    <br>Bank Upgrades:<br>
-                    <br>
-                    Gold Account
-                </div>
+                Gold Account
             </div>
-            <br><br>
         </div>
+        <br><br>
+    </div>
 
-        <div id="eventTasks" style="display: none;">
-            <h3 id="eventTasksPercentage">Event Tasks:</h3>
-        </div>
+    <div id="eventTasks" style="display: none;">
+        <h3 id="eventTasksPercentage">Event Tasks:</h3>
+    </div>
 
-        <div id="slayingTasks" style="display: none;">
-            <h3 id="slayingTasksPercentage">Slaying Tasks:</h3>
-        </div>
+    <div id="slayingTasks" style="display: none;">
+        <h3 id="slayingTasksPercentage">Slaying Tasks:</h3>
+    </div>
 
-        <div id="skillRelatedTasks" style="display: none;">
-            <h3 id="skillRelatedTasksPercentage">Skill Related Tasks:</h3>
-        </div>
+    <div id="skillRelatedTasks" style="display: none;">
+        <h3 id="skillRelatedTasksPercentage">Skill Related Tasks:</h3>
+    </div>
 
-        <div id="miscellaneousTasks" style="display: none;">
-            <h3 id="miscellaneousTasksPercentage">Miscellaneous Tasks:</h3>
-        </div>
+    <div id="miscellaneousTasks" style="display: none;">
+        <h3 id="miscellaneousTasksPercentage">Miscellaneous Tasks:</h3>
+    </div>
 
-        <div id="storyTasks" style="display: none;">
-            <h3 id="storyTasksPercentage">Story Tasks:</h3>
-        </div>
+    <div id="storyTasks" style="display: none;">
+        <h3 id="storyTasksPercentage">Story Tasks:</h3>
+    </div>
     </div>
 
 </body>
+<script src="JS/Data/pnbt.js"></script>
+<script src="JS/Data/MinecraftColorCodes.3.7.js"></script>
 <script src="https://cdn.socket.io/socket.io-3.0.0.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="JS/Data/Constants.js"></script>

@@ -1,3 +1,6 @@
+const nbt = require('prismarine-nbt')
+const { Buffer } = require('buffer')
+
 let usernameInput = document.getElementById("usernameInput");
 let profilesDropdown = document.getElementById("profiles");
 
@@ -96,7 +99,7 @@ function swapDivXPTasks(divName) {
 function toggleDiv(divId) {
     let x = document.getElementById(divId);
     if (x.style.display === "none") {
-        x.style.display = "block";
+        x.style.display = "flex";
     } else {
         x.style.display = "none";
     }
@@ -113,7 +116,7 @@ function toggleAllDivs(selectedDisplay) {
 
     if (swappedTaskDisplayed) {
         for (const element of whatToToggle) {
-            document.getElementById(element).style.display = "block";
+            document.getElementById(element).style.display = "flex";
         }
         swappedTaskDisplayed = false;
     } else {
@@ -128,11 +131,6 @@ function toggleAllDivsBeforeSwappingTaskDisplay() {
         document.getElementById(element).style.display = "none";
     }
 }
-
-//Display Details
-getCoreTasksDetails("accessories", "COMMON");
-getCoreTasksDetails("pets", "EPIC");
-getCoreTasksDetails("minions", "FARMING");
 
 function showData() {
     let data = profileData[profilesDropdown.value].profile;

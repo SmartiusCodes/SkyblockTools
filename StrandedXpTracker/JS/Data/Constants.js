@@ -163,11 +163,11 @@ var constants = {
 
   max_magical_power: {
     SPECIAL: [
-      "Hatcessory"
+      "Hat"
     ],
     LEGENDARY: [
-      "Personal Compacter 7000",
-      "Personal Deleter 7000",
+      "Personal Compactor 7000",
+      "Personal Deletor 7000",
       "Bat Artifact",
       "Candy Relic",
       "Jacobus Register",
@@ -238,7 +238,7 @@ var constants = {
       "Scavenger Talisman",
       "Blood God Crest",
       "Skeleton Talisman",
-      "Dante Talisman/Ring",
+      "Dante Ring",
       "Night Vision Charm",
       "Pocket Espresso Machine",
       "Handy Blood Chalice",
@@ -299,7 +299,7 @@ var constants = {
       "Zombie"
     ],
     EPIC: [
-      "Wisp"
+      "Glacial Wisp"
     ]
   },
 

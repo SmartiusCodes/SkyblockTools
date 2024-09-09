@@ -2,9 +2,9 @@ function getCoreTask(data, uuidOfUsername) {
 
     //Core Tasks Displays
     let coreTasksDisplay = document.getElementById("coreTasksPercentage");
-    let skillsDisplay = document.getElementById("skills");
-    let accessoryBagDisplay = document.getElementById("accessoryBag");
-    let petScoreDisplay = document.getElementById("petScore");
+    //let skillsDisplay = document.getElementById("skills");
+
+    //let petScoreDisplay = document.getElementById("petScoreDisplay");
     let collectionDisplay = document.getElementById("collection");
     let minionDisplay = document.getElementById("minion");
     let bankUpgradesDisplay = document.getElementById("bankUpgrades");
@@ -158,21 +158,117 @@ function getCoreTask(data, uuidOfUsername) {
 
     skillsString += "<br />You have " + skillsXp + " XP in Skills out of " + maxXpFromSkills + " available!";
 
-    skillsDisplay.innerHTML = skillsString;
+    skills.innerHTML = skillsString;
 
     //Accessory Bag
+    accessoryBagCommon.innerHTML = "COMMON ACCESSORIES<br />";
+    accessoryBagUncommon.innerHTML = "UNCOMMON ACCESSORIES<br />";
+    accessoryBagRare.innerHTML = "RARE ACCESSORIES<br />";
+    accessoryBagEpic.innerHTML = "EPIC ACCESSORIES<br />";
+    accessoryBagLegendary.innerHTML = "LEGENDARY ACCESSORIES<br />";
+    accessoryBagSpecial.innerHTML = "SPECIAL ACCESSORIES<br />";
+
+    let accessoryBagData = Buffer.from(data.members[uuidOfUsername].inventory.bag_contents.talisman_bag.data, 'base64');
+    nbt.parse(accessoryBagData, (error, json) => {
+        if (error) {
+            logger.error(error);
+        }
+        //Get name of every accessory in bag
+        let array = json.value.i.value.value;
+        for (let key in array) {
+            let rarity;
+            let name;
+            if (array[key].tag != undefined) {
+
+                rarity = array[key].tag.value.display.value.Lore.value.value[array[key].tag.value.display.value.Lore.value.value.length - 1];
+                name = array[key].tag.value.display.value.Name.value;
+
+                rarity = removeSymbols(rarity)
+                name = removeSymbols(name);
+
+                if (rarity == "COMMON ACCESSORY") {
+                    accessoryBagCommon.innerHTML += name + "<br />";
+                }
+                if (rarity == "UNCOMMON ACCESSORY") {
+                    accessoryBagUncommon.innerHTML += name + "<br />";
+                }
+                if (rarity == "RARE ACCESSORY") {
+                    accessoryBagRare.innerHTML += name + "<br />";
+                }
+                if (rarity == "EPIC ACCESSORY") {
+                    accessoryBagEpic.innerHTML += name + "<br />";
+                }
+                if (rarity == "LEGENDARY ACCESSORY") {
+                    accessoryBagLegendary.innerHTML += name + "<br />";
+                }
+                if (rarity == "SPECIAL HATCESSORY") {
+                    accessoryBagSpecial.innerHTML += name + "<br />";
+                }
+            }
+        }
+    });
+
     let magicalPower = data.members[uuidOfUsername].accessory_bag_storage.highest_magical_power;
 
     currentCoreTasksXp += magicalPower;
 
     accessoryBagDisplay.innerHTML = "You have " + magicalPower + " out of " + maxXpFromAccessories + " Magical Power!<br /><br />Each Magical Power gives 1 Skyblock XP!";
 
+    document.getElementById("accessoriesBtn").disabled = false;
+    document.getElementById("accessoriesBtn").innerHTML = "Show Missing";
+    document.getElementById("accessoriesBtn").onclick = function () { getCoreTasksDetails("accessories", profileData[profilesDropdown.value].profile, uuidOfUsername) };
+
     //Pet Score
+    petCommon.innerHTML = "COMMON PETS<br />";
+    petUncommon.innerHTML = "UNCOMMON PETS<br />";
+    petRare.innerHTML = "RARE PETS<br />";
+    petEpic.innerHTML = "EPIC PETS<br />";
+    petLegendary.innerHTML = "LEGENDARY PETS<br />";
+    petMythic.innerHTML = "MYTHIC PETS<br />";
+
+    let petsDataPath = data.members[uuidOfUsername].pets_data.pets;
+
+    for (let pets in petsDataPath) {
+        let petName = removeSymbols(petsDataPath[pets].type);
+        petName = petName.replaceAll("_", " ");
+        petName = petName.toLowerCase();
+        if (petName.indexOf(" ") == -1) {
+            petName = petName.charAt(0).toUpperCase() + petName.slice(1);
+        } else {
+            //First word
+            petName = petName.charAt(0).toUpperCase() + petName.slice(1, petName.indexOf(" ")) +
+                //Second word
+                " " + petName.charAt(petName.indexOf(" ") + 1).toUpperCase() + petName.slice(petName.indexOf(" ") + 2);
+        }
+        if (petsDataPath[pets].tier == "COMMON") {
+            petCommon.innerHTML += petName + "<br />";
+        }
+        if (petsDataPath[pets].tier == "UNCOMMON") {
+            petUncommon.innerHTML += petName + "<br />";
+        }
+        if (petsDataPath[pets].tier == "RARE") {
+            petRare.innerHTML += petName + "<br />";
+        }
+        if (petsDataPath[pets].tier == "EPIC") {
+            petEpic.innerHTML += petName + "<br />";
+        }
+        if (petsDataPath[pets].tier == "LEGENDARY") {
+            petLegendary.innerHTML += petName + "<br />";
+        }
+        if (petsDataPath[pets].tier == "MYTHIC") {
+            petMythic.innerHTML += petName + "<br />";
+        }
+    }
+
     let petScore = data.members[uuidOfUsername].leveling.highest_pet_score;
 
     currentCoreTasksXp += petScore * 3;
 
     petScoreDisplay.innerHTML = "You have " + petScore + " out of " + maxXpFromPetScore + " Pet Score!<br /><br />Each Pet Score gives 3 Skyblock XP!";
+
+    document.getElementById("petsBtn").disabled = false;
+    document.getElementById("petsBtn").innerHTML = "Show Missing";
+    document.getElementById("petsBtn").onclick = function () { getCoreTasksDetails("pets", profileData[profilesDropdown.value].profile, uuidOfUsername) };
 
     //Collections
     let collections;
@@ -251,4 +347,31 @@ function getCoreTask(data, uuidOfUsername) {
     //let coreTasksString = "You have " + currentCoreTasksXp + " XP in Core Tasks out of " + maxCoreTasksXp + " available!";
 
     coreTasksDisplay.innerHTML = "Core Tasks (" + (currentCoreTasksXp / maxCoreTasksXp * 100).toFixed(2) + "% Done)";
+}
+
+function removeSymbols(inputString) {
+    inputString = inputString.replaceAll("§0", "");
+    inputString = inputString.replaceAll("§1", "");
+    inputString = inputString.replaceAll("§2", "");
+    inputString = inputString.replaceAll("§3", "");
+    inputString = inputString.replaceAll("§4", "");
+    inputString = inputString.replaceAll("§5", "");
+    inputString = inputString.replaceAll("§6", "");
+    inputString = inputString.replaceAll("§7", "");
+    inputString = inputString.replaceAll("§8", "");
+    inputString = inputString.replaceAll("§9", "");
+    inputString = inputString.replaceAll("§a", "");
+    inputString = inputString.replaceAll("§b", "");
+    inputString = inputString.replaceAll("§c", "");
+    inputString = inputString.replaceAll("§d", "");
+    inputString = inputString.replaceAll("§e", "");
+    inputString = inputString.replaceAll("§f", "");
+    inputString = inputString.replaceAll("§k", "");
+    inputString = inputString.replaceAll("§l", "");
+    inputString = inputString.replaceAll("§m", "");
+    inputString = inputString.replaceAll("§n", "");
+    inputString = inputString.replaceAll("§o", "");
+    inputString = inputString.replaceAll("§r", "");
+
+    return inputString;
 }
