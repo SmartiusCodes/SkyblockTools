@@ -2,12 +2,6 @@ function getCoreTask(data, uuidOfUsername) {
 
     //Core Tasks Displays
     let coreTasksDisplay = document.getElementById("coreTasksPercentage");
-    //let skillsDisplay = document.getElementById("skills");
-
-    //let petScoreDisplay = document.getElementById("petScoreDisplay");
-    let collectionDisplay = document.getElementById("collection");
-    let minionDisplay = document.getElementById("minion");
-    let bankUpgradesDisplay = document.getElementById("bankUpgrades");
 
     //Core task variables
     let maxCoreTasksXp = 0;
@@ -271,6 +265,12 @@ function getCoreTask(data, uuidOfUsername) {
     document.getElementById("petsBtn").onclick = function () { getCoreTasksDetails("pets", profileData[profilesDropdown.value].profile, uuidOfUsername) };
 
     //Collections
+    collectionFarming.innerHTML = "FARMING COLLECTIONS<br />";
+    collectionMining.innerHTML = "MINING COLLECTIONS<br />";
+    collectionCombat.innerHTML = "COMBAT COLLECTIONS<br />";
+    collectionForaging.innerHTML = "FORAGING COLLECTIONS<br />";
+    collectionFishing.innerHTML = "FISHING COLLECTIONS<br />";
+
     let collections;
     let collectionObject = {};
     for (let uuid in data.members) {
@@ -284,6 +284,8 @@ function getCoreTask(data, uuidOfUsername) {
         }
     }
 
+    console.log(collectionObject);
+
     let amountOfCollections = 0;
     for (let maxCollections in constants.max_collections) {
         for (let i = 0; collectionObject[maxCollections] >= constants.max_collections[maxCollections][i] && constants.max_collections[maxCollections][i] != undefined; i++) {
@@ -294,6 +296,10 @@ function getCoreTask(data, uuidOfUsername) {
     currentCoreTasksXp += amountOfCollections * 4;
 
     collectionDisplay.innerHTML = "You have " + amountOfCollections + " out of " + maxXpFromCollections / 4 + " Collections done!<br /><br />Each Collection gives 4 Skyblock XP!";
+
+    document.getElementById("collectionBtn").disabled = false;
+    document.getElementById("collectionBtn").innerHTML = "Show Missing";
+    document.getElementById("collectionBtn").onclick = function () { getCoreTasksDetails("collection", profileData[profilesDropdown.value].profile, uuidOfUsername) };
 
     //Minions
     let minions;

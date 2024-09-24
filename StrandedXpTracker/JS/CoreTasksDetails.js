@@ -211,6 +211,43 @@ function getCoreTasksDetails(task, data, uuidOfUsername) {
         document.getElementById("petsBtn").onclick = function () { getCoreTasksDetails("pets", profileData[profilesDropdown.value].profile, uuidOfUsername) };
     }
 
+    //Collections
+    if (task == "collections") {
+        document.getElementById("collectionBtn").innerHTML = "Show Owned";
+        document.getElementById("collectionBtn").onclick = function () { runCollections(data, uuidOfUsername) }
+
+        
+    }
+
+    function runCollections(data, uuidOfUsername) {
+        let collections;
+        let collectionObject = {};
+        for (let uuid in data.members) {
+            collections = data.members[uuid].collection;
+            for (let key in collections) {
+                if (collectionObject.hasOwnProperty(key)) {
+                    collectionObject[key] += collections[key];
+                } else {
+                    collectionObject[key] = collections[key];
+                }
+            }
+        }
+
+        let amountOfCollections = 0;
+        for (let maxCollections in constants.max_collections) {
+            for (let i = 0; collectionObject[maxCollections] >= constants.max_collections[maxCollections][i] && constants.max_collections[maxCollections][i] != undefined; i++) {
+                amountOfCollections++;
+            }
+        }
+
+        currentCoreTasksXp += amountOfCollections * 4;
+
+        collectionDisplay.innerHTML = "You have " + amountOfCollections + " out of " + maxXpFromCollections / 4 + " Collections done!<br /><br />Each Collection gives 4 Skyblock XP!";
+
+        document.getElementById("collectionBtn").innerHTML = "Show Missing";
+        document.getElementById("collectionBtn").onclick = function () { getCoreTasksDetails("collection", profileData[profilesDropdown.value].profile, uuidOfUsername) };
+    }
+
     //Minions
     if (task == "minions") {
         let minionsDisplayString = "";
@@ -221,29 +258,29 @@ function getCoreTasksDetails(task, data, uuidOfUsername) {
     }
 }
 
-function removeSymbols(MOTD) {
-    MOTD = MOTD.replaceAll("§0", "");
-    MOTD = MOTD.replaceAll("§1", "");
-    MOTD = MOTD.replaceAll("§2", "");
-    MOTD = MOTD.replaceAll("§3", "");
-    MOTD = MOTD.replaceAll("§4", "");
-    MOTD = MOTD.replaceAll("§5", "");
-    MOTD = MOTD.replaceAll("§6", "");
-    MOTD = MOTD.replaceAll("§7", "");
-    MOTD = MOTD.replaceAll("§8", "");
-    MOTD = MOTD.replaceAll("§9", "");
-    MOTD = MOTD.replaceAll("§a", "");
-    MOTD = MOTD.replaceAll("§b", "");
-    MOTD = MOTD.replaceAll("§c", "");
-    MOTD = MOTD.replaceAll("§d", "");
-    MOTD = MOTD.replaceAll("§e", "");
-    MOTD = MOTD.replaceAll("§f", "");
-    MOTD = MOTD.replaceAll("§k", "");
-    MOTD = MOTD.replaceAll("§l", "");
-    MOTD = MOTD.replaceAll("§m", "");
-    MOTD = MOTD.replaceAll("§n", "");
-    MOTD = MOTD.replaceAll("§o", "");
-    MOTD = MOTD.replaceAll("§r", "");
+function removeSymbols(inputString) {
+    inputString = inputString.replaceAll("§0", "");
+    inputString = inputString.replaceAll("§1", "");
+    inputString = inputString.replaceAll("§2", "");
+    inputString = inputString.replaceAll("§3", "");
+    inputString = inputString.replaceAll("§4", "");
+    inputString = inputString.replaceAll("§5", "");
+    inputString = inputString.replaceAll("§6", "");
+    inputString = inputString.replaceAll("§7", "");
+    inputString = inputString.replaceAll("§8", "");
+    inputString = inputString.replaceAll("§9", "");
+    inputString = inputString.replaceAll("§a", "");
+    inputString = inputString.replaceAll("§b", "");
+    inputString = inputString.replaceAll("§c", "");
+    inputString = inputString.replaceAll("§d", "");
+    inputString = inputString.replaceAll("§e", "");
+    inputString = inputString.replaceAll("§f", "");
+    inputString = inputString.replaceAll("§k", "");
+    inputString = inputString.replaceAll("§l", "");
+    inputString = inputString.replaceAll("§m", "");
+    inputString = inputString.replaceAll("§n", "");
+    inputString = inputString.replaceAll("§o", "");
+    inputString = inputString.replaceAll("§r", "");
 
-    return MOTD;
+    return inputString;
 }

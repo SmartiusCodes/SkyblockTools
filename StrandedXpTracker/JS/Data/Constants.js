@@ -192,13 +192,13 @@ var constants = {
       "Odger's Diamond Tooth",
       "Soulflow Supercell",
       "Wither Artifact",
-      "Pesthunter Artifact"
+      "Pesthunter Artifact",
+      "Haste Artifact"
     ],
     RARE: [
       "Abicase",
       "Zombie Artifact",
       "Feather Artifact",
-      "Haste Ring",
       "Sea Creature Artifact",
       "Eternal Hoof",
       "Potion Affinity Artifact",

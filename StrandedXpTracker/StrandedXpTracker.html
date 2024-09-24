@@ -46,9 +46,7 @@
 
             <h4>Accessory Bag</h4>
             <button onclick='toggleDiv("accessoryBagDiv")'>Toggle Accessory Bag</button>
-            <button disabled id="accessoriesBtn"
-                onclick='getCoreTasksDetails("accessories", profileData[profilesDropdown.value].profile, uuidOfUsername)'>Show
-                Missing</button>
+            <button disabled id="accessoriesBtn"onclick='getCoreTasksDetails("accessories", profileData[profilesDropdown.value].profile, uuidOfUsername)'>Show Missing</button>
             <p id="accessoryBagDisplay"></p>
             <div style="display: none;" id="accessoryBagDiv">
                 <p id="accessoryBagCommon" style="color: #ffffff;"></p>&nbsp&nbsp
@@ -63,7 +61,7 @@
 
             <h4>Pet Score</h4>
             <button onclick='toggleDiv("petScoreDiv")'>Toggle Pets</button>
-            <button disabled id="petsBtn" onclick='getCoreTasksDetails("pets", profileData[profilesDropdown.value].profile, uuidOfUsername)'>ShowMissing</button>
+            <button disabled id="petsBtn" onclick='getCoreTasksDetails("pets", profileData[profilesDropdown.value].profile, uuidOfUsername)'>Show Missing</button>
             <p id="petScoreDisplay"></p>
             <div style="display: none;" id="petScoreDiv">
                 <p id="petCommon" style="color: #ffffff;"></p>&nbsp&nbsp
@@ -79,18 +77,14 @@
 
         <h4>Collection</h4>
         <button onclick='toggleDiv("collectionDiv")'>Toggle Collection</button>
+        <button disabled id="collectionBtn" onclick='getCoreTasksDetails("collection", profileData[profilesDropdown.value].profile, uuidOfUsername)'>Show Missing</button>
+        <p id="collectionDisplay"></p>
         <div style="display: none;" id="collectionDiv">
-            <p id="collection"></p>
-            <button onclick="toggleDiv('collectionDetailsDiv')">Toggle Unobtainable Collections</button>
-            <br>
-            <div style="display: none;" id="collectionDetailsDiv">
-                <br>Unobtainable Collections:<br>
-                <br>
-                Glacite<br>
-                Tungsten<br>
-                Umber<br>
-                All Rift Collections<br>
-            </div>
+            <p id="collectionFarming"></p>&nbsp&nbsp
+            <p id="collectionMining"></p>&nbsp&nbsp
+            <p id="collectionCombat"></p>&nbsp&nbsp
+            <p id="collectionForaging"></p>&nbsp&nbsp
+            <p id="collectionFishing"></p>
         </div>
         <hr>
 
@@ -151,7 +145,6 @@
 
 </body>
 <script src="JS/Data/pnbt.js"></script>
-<script src="JS/Data/MinecraftColorCodes.3.7.js"></script>
 <script src="https://cdn.socket.io/socket.io-3.0.0.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="JS/Data/Constants.js"></script>
