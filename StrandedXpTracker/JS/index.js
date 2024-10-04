@@ -32,12 +32,13 @@ async function getProfiles() {
 
     profileId = [];
 
-    let uuid = await fetch(`https://api.ashcon.app/mojang/v2/user/${username}`);
+    //let uuid = await fetch(`https://api.ashcon.app/mojang/v2/user/${username}`);
+    let uuid = await fetch(`https://api.gapple.pw/cors/username/${username}`);
     jsonData = await uuid.json();
-    if (jsonData.uuid == undefined) {
+    if (jsonData.id == undefined) {
         alert("Unknown name");
     } else if (apiRequests < apiLimit) {
-        uuid = jsonData.uuid;
+        uuid = jsonData.id;
         let profiles = await fetch(`https://api.hypixel.net/v2/skyblock/profiles?key=${localStorage.getItem("KEY")}&uuid=${uuid}`);
         let profilesData = await profiles.json();
         if (!profilesData.success) {
