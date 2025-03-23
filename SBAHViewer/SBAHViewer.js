@@ -95,15 +95,12 @@ async function search() {
             var rarity = document.getElementById("Rarity").value;
 
             for (var i = 0, ii = input.length; i < ii; i++) {
-                var indexOfMF = 0;
                 inserted = false;
                 var loreArray = lore;
                 //search:
-                if (itemName.includes("!")) {
-                    var blockedWord = itemName.substring(itemName.indexOf("!") + 1);
-                    itemName = itemName.substring(0, itemName.indexOf("!") - 1);
-                }
-                if (eval(BIN) && input[i].item_name.toLowerCase().includes(itemName.toLowerCase()) && !(input[i].item_name.toLowerCase().includes(blockedWord))) {
+                console.log(input[i].item_name);
+                if (eval(BIN) && input[i].item_name.toLowerCase().includes(itemName.toLowerCase())) {
+                    if (document.getElementById("ignoreHelmets").checked) { break }
                     if (loreArray.length > 0) {
                         if (loreArray.every(item => input[i].item_lore.toLowerCase().includes(item.toLowerCase()))) {
                             Rarity(rarity, inserted, output, input, i);
