@@ -98,7 +98,6 @@ async function search() {
                 inserted = false;
                 var loreArray = lore;
                 //search:
-                console.log(input[i].item_name);
                 if (eval(BIN) && input[i].item_name.toLowerCase().includes(itemName.toLowerCase())) {
                     if (document.getElementById("ignoreHelmets").checked) { break }
                     if (loreArray.length > 0) {
