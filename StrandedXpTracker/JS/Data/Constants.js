@@ -174,6 +174,7 @@ var constants = {
       "Razor-sharp Shark Tooth Necklace",
       "Golden Jerry Artifact",
       "Reaper Orb",
+      "Runebook",
       "Ender Relic",
       "Pulse Ring",
       "Prestige Chocolate Realm"
@@ -217,7 +218,8 @@ var constants = {
       "Atmospheric Filter",
       "Blaze Talisman",
       "Frozen Chicken",
-      "Pig's Foot"
+      "Pig's Foot",
+      "Mineral Talisman"
     ],
     UNCOMMON: [
       "New Year Cake Bag",
