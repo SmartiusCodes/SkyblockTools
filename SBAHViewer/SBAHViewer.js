@@ -61,7 +61,7 @@ async function search() {
         var itemName = document.getElementById("Name").value;
 
         if (document.getElementById("petLevel").value != "") {
-            itemName = "[Lvl " + document.getElementById("petLevel").value + "]" + itemName;
+            itemName = "[Lvl " + document.getElementById("petLevel").value + "] " + itemName;
         }
 
         var lore = [];
@@ -114,7 +114,7 @@ async function search() {
 
         var maxAuctionsDisplayed = 25;
 
-        if (document.getElementById("auctionsDisplayed").value != "") {
+        if (document.getElementById("auctionsDisplayed").value != "" && document.getElementById("auctionsDisplayed").value > 0) {
             maxAuctionsDisplayed = document.getElementById("auctionsDisplayed").value;
         }
 
