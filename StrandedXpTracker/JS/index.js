@@ -80,6 +80,7 @@ async function getProfiles() {
             profilesDropdown.add(option);
             profileData.push(profileId[i + 1]);
         }
+        alert("Profile(s) found");
     } else {
         alert("API Limit Reached!");
     }

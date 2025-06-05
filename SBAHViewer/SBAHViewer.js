@@ -96,7 +96,7 @@ async function search() {
                 var loreArray = lore;
                 //search:
                 if (eval(BIN) && input[i].item_name.toLowerCase().includes(itemName.toLowerCase())) {
-                    if (document.getElementById("ignoreHelmets").checked) { break }
+                    if (document.getElementById("ignoreHelmets").checked && input[i].item_name.toLowerCase().includes("helmet")) { break }
                     if (loreArray.length > 0) {
                         if (loreArray.every(item => input[i].item_lore.toLowerCase().includes(item.toLowerCase()))) {
                             Rarity(rarity, inserted, output, input, i);

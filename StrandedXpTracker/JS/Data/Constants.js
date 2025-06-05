@@ -271,6 +271,7 @@ var constants = {
       "Ghoul",
       "Giraffe",
       "Guardian",
+      "Hedgehog",
       "Horse",
       "Hound",
       "Jellyfish",

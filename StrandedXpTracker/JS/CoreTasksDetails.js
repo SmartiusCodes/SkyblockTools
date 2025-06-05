@@ -128,7 +128,7 @@ function getCoreTasksDetails(task, data, uuidOfUsername) {
 
         let petsDataPath = data.members[uuidOfUsername].pets_data.pets;
         let nameAndRarity = {
-            "EPIC": [],
+            EPIC: [],
             LEGENDARY: [],
             MYTHIC: []
         };
