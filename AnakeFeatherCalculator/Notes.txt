@@ -1,0 +1,5 @@
+Things to finish!
+
+Add Anake Feathers to the price checker when update comes out (Cant find "interal ID" yet)
+Add the enchant "Drain 5" to Constants.js under items -> experimentation_table -> bazaar_items
+Add the zombie slayer drop "Revenant" to Constants.js under items -> slayers -> revenant -> bazaar_items
